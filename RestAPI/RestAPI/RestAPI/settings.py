@@ -44,7 +44,11 @@ INSTALLED_APPS = [
 	'API',
 ]
 
-
+#restrict number of items in one json
+#REST_FRAMEWORK = {
+#    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+#    'PAGE_SIZE': 10
+#}
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
