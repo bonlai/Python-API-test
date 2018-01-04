@@ -1,0 +1,13 @@
+TestMapping
+TestCase
+DumbDocument
+SomeField
+unicode_repr
+TestSerializer
+dedent
+TestIntegration
+TestSomeField
+unicode_literals
+fields
+FieldTest
+DocumentSerializer
