@@ -4,26 +4,12 @@ from django.db.models.fields.related import ForeignKey
 # Create your models here.
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 
-class Image(models.Model):
-    created = models.DateTimeField(auto_now_add=True)
-    image=models.ImageField(upload_to='Image/', default='Images/None/No-img.jpg')
-
-    class Meta:
-        db_table = "image"
-
 class ProfilePic(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     image=models.ImageField(upload_to='ProfilePic/', default='Images/None/No-img.jpg')
 
     class Meta:
         db_table = "profilePic"
-
-class RestaurantImage(models.Model):
-    created = models.DateTimeField(auto_now_add=True)
-    image=models.ImageField(upload_to='RestaurantImage/', default='Images/None/No-img.jpg')
-
-    class Meta:
-        db_table = "restaurantImage"
 
 GENDER_CHOICES = (
     ('Male', 'Male'),
@@ -55,27 +41,16 @@ class Interest(models.Model):
     class Meta:
         db_table = "interest"
 
-class Restaurant(models.Model):
-    name = models.CharField(max_length=100)
-    phone = models.CharField(max_length=20, null=True)
-    address = models.TextField()
-    self_introduction = models.TextField()
-    password = models.CharField(max_length=30)
-    created = models.DateTimeField(auto_now_add=True)
-    #image=models.ForeignKey('images');
-
-    class Meta:
-        db_table = "restaurant"
-
 class Gathering(models.Model):
     name = models.CharField(max_length=100)
     details = models.TextField()
     start_datetime = models.DateTimeField()
     is_start=models.BooleanField()
     #created_by = models.ForeignKey('appUser')
+    created_by = models.ForeignKey('appUser',null=True,related_name ='owned', on_delete=models.CASCADE)
     restaurant=models.ForeignKey('restaurant')
     #participate=models.ForeignKey('participate')
-    member=models.ManyToManyField(AppUser, through='participate')
+    member=models.ManyToManyField(AppUser, through='participate',related_name ='joined')
 
     class Meta:
         db_table = "gathering"
@@ -87,13 +62,17 @@ class Participate(models.Model):
     class Meta:
         db_table = "participate"
 
-class OtherInfo(models.Model):
+class Restaurant(models.Model):
     name = models.CharField(max_length=100)
-    value = models.CharField(max_length=100)
-    restaurant=models.ForeignKey('restaurant')
+    #phone = models.CharField(max_length=20, null=True)
+    address = models.TextField()
+    self_introduction = models.TextField()
+    password = models.CharField(max_length=30)
+    created = models.DateTimeField(auto_now_add=True)
+    #image=models.ForeignKey('images');
 
     class Meta:
-        db_table = "otherInfo"
+        db_table = "restaurant"
 
 class Review(models.Model):
     comment=models.TextField()
@@ -102,4 +81,19 @@ class Review(models.Model):
     restaurant=models.ForeignKey('restaurant')
 
     class Meta:
-        db_table = "gathering"
+        db_table = "review"
+
+class RestaurantImage(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
+    image=models.ImageField(upload_to='RestaurantImage/', default='Images/None/No-img.jpg')
+
+    class Meta:
+        db_table = "restaurantImage"
+
+class OtherInfo(models.Model):
+    name = models.CharField(max_length=100)
+    value = models.CharField(max_length=100)
+    restaurant=models.ForeignKey('restaurant')
+
+    class Meta:
+        db_table = "otherInfo"

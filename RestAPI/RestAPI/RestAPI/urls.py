@@ -2,7 +2,7 @@
 Definition of urls for RestAPI.
 """
 
-from API.views import ImagesViewSet,ProfilePicViewSet,AppUserViewSet
+from API.views import *
 
 from django.views.generic.base import RedirectView
 
@@ -20,9 +20,11 @@ from rest_framework.routers import DefaultRouter
 # admin.autodiscover()
 
 router = DefaultRouter()
-router.register(r'images', ImagesViewSet)
 router.register(r'profilePic', ProfilePicViewSet)
 router.register(r'appUser', AppUserViewSet)
+router.register(r'gathering', GatheringViewSet)
+router.register(r'restaurantImage', RestaurantImageViewSet)
+
 
 urlpatterns = [
     url(r'^$', RedirectView.as_view(url='/api/')),
