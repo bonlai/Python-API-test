@@ -1,0 +1,15 @@
+mail
+APIRequestFactory
+override_settings
+register_permission_classes
+TestCase
+force_text
+APIBasicTests
+RegisterView
+TestsMixin
+status
+get_user_model
+CustomPermissionClass
+account_app_settings
+reverse
+settings

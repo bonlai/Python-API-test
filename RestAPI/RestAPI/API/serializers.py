@@ -23,4 +23,24 @@ class RestaurantImageSerializer(serializers.HyperlinkedModelSerializer):
     image=serializers.ImageField(max_length=None,use_url=True)
     class Meta:
         model = RestaurantImage
-        fields = ('id', 'image', 'url')                
+        fields = ('id', 'image', 'url')
+        
+from django.contrib.auth.models import User
+from rest_framework import permissions
+from django.contrib.auth import get_user_model
+
+class UserCreateSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True)
+    #images  = serializers.PrimaryKeyRelatedField(many=True, queryset=Img.objects.all())
+    def create(self, validated_data):
+        user = User.objects.create(
+            username=validated_data['username']
+        )
+        user.set_password(validated_data['password'])
+        user.save()
+        return user
+
+        
+    class Meta:
+        model = User
+        fields = ('username','password')

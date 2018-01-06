@@ -9,6 +9,8 @@ from .serializers import *
 from rest_framework.decorators import detail_route, list_route
 from rest_framework.response import Response
 
+from rest_framework import generics
+#from django.views.decorators.csrf import csrf_exempt
 
 class ProfilePicViewSet(viewsets.ModelViewSet):
     queryset = ProfilePic.objects.all()
@@ -37,3 +39,9 @@ class GatheringViewSet(viewsets.ModelViewSet):
     queryset = Gathering.objects.all()
     serializer_class = GatheringSerializer
     #permission_classes = (IsAuthenticated,)
+
+#@csrf_exempt
+class CreateUserView (generics.CreateAPIView):
+    model = User
+    permission_classes = (permissions.AllowAny,)
+    serializer_class = UserCreateSerializer

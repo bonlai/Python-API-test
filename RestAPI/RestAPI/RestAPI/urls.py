@@ -14,6 +14,7 @@ from django.conf import settings
 import django.contrib.auth.views
 from django.contrib import admin
 from rest_framework.routers import DefaultRouter
+from rest_framework.authtoken import views
 # Uncomment the next lines to enable the admin:
 # from django.conf.urls import include
 # from django.contrib import admin
@@ -31,6 +32,10 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^api/', include(router.urls)),
+    url(r'^api-token-auth/', views.obtain_auth_token),
+    url(r'^api/register/$', CreateUserView),
+    url(r'^rest-auth/', include('rest_auth.urls')),
+    url(r'^rest-auth/registration/', include('rest_auth.registration.urls'))
     #url(r'^appUser/$', AppUserViewSet.testing),
 ]
 

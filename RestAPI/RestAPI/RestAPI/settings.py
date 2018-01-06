@@ -26,10 +26,12 @@ SECRET_KEY = '98ac2147-6f07-450e-bc0e-583825c1dac4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '192.168.2.5']
+ALLOWED_HOSTS = ['localhost', '192.168.2.5','192.168.2.4']
 
 SESSION_COOKIE_AGE = 600
 # Application definition
+
+SITE_ID = 1
 
 INSTALLED_APPS = [
     'app',
@@ -42,6 +44,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 	'rest_framework',
 	'API',
+    'rest_framework.authtoken',
+    'rest_auth',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
 ]
 
 #restrict number of items in one json
@@ -49,6 +57,17 @@ INSTALLED_APPS = [
 #    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
 #    'PAGE_SIZE': 10
 #}
+
+'''
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
+'''
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',

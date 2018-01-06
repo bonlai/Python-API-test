@@ -1,0 +1,8 @@
+EmailConfirmationAdmin
+get_adapter
+app_settings
+django
+EmailAddress
+EmailConfirmation
+EmailAddressAdmin
+admin
