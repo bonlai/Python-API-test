@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 class ProfilePic(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     image=models.ImageField(upload_to='ProfilePic/', default='Images/None/No-img.jpg')
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE,primary_key=True)
     class Meta:
         db_table = "profilePic"
 
@@ -22,7 +22,7 @@ GENDER_CHOICES = (
 )
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE,primary_key=True)
     dob = models.DateField(null=True)
     self_introduction = models.TextField(blank=True)
     location = models.CharField(max_length=30, blank=True)
@@ -53,7 +53,7 @@ class AppUser(models.Model):
 class Interest(models.Model):
     name = models.CharField(max_length=10)
     #user=models.ForeignKey('AppUser');
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User)
 
     class Meta:
         db_table = "interest"
@@ -67,7 +67,7 @@ class Gathering(models.Model):
     created_by = models.OneToOneField(User, on_delete=models.CASCADE)
     restaurant=models.ForeignKey('restaurant')
     #participate=models.ForeignKey('participate')
-    #member=models.ManyToManyField(AppUser, through='participate',related_name ='joined')
+    member=models.ManyToManyField(User, through='participate',related_name ='joined')
 
     class Meta:
         db_table = "gathering"
@@ -96,7 +96,7 @@ class Review(models.Model):
     comment=models.TextField()
     rating=models.IntegerField()
     created_by = models.ForeignKey(User)
-    restaurant=models.ForeignKey('restaurant')
+    restaurant=models.ForeignKey(Restaurant)
 
     class Meta:
         db_table = "review"
@@ -104,14 +104,14 @@ class Review(models.Model):
 class RestaurantImage(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     image=models.ImageField(upload_to='RestaurantImage/', default='Images/None/No-img.jpg')
-    restaurant=models.ForeignKey('restaurant')
+    restaurant=models.OneToOneField(Restaurant, on_delete=models.CASCADE,primary_key=True)
     class Meta:
         db_table = "restaurantImage"
 
 class OtherInfo(models.Model):
     name = models.CharField(max_length=100)
     value = models.CharField(max_length=100)
-    restaurant=models.ForeignKey('restaurant')
+    restaurant=models.ForeignKey(Restaurant)
 
     class Meta:
         db_table = "otherInfo"

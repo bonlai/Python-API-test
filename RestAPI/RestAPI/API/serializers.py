@@ -15,10 +15,20 @@ class ProfilePicSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):
-    user = UserSerializer()
+    #user = UserSerializer()
     class Meta:
         model = Profile
-        fields = '__all__'
+        fields = ('url','dob','location','gender','self_introduction')
+
+    @receiver(post_save, sender=User)
+    def create_user_profile(sender, instance, created, **kwargs):
+        if created:
+            Profile.objects.create(user=instance)
+
+    @receiver(post_save, sender=User)
+    def save_user_profile(sender, instance, **kwargs):
+        instance.profile.save()
+
 '''
 class AppUserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
