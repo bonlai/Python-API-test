@@ -17,6 +17,10 @@ class ProfilePicViewSet(viewsets.ModelViewSet):
     serializer_class = ProfilePicSerializer
     #permission_classes = (IsAuthenticated,)
 
+class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
+
 class ProfileViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
@@ -42,4 +46,7 @@ class AppUserViewSet(viewsets.ModelViewSet):
 class GatheringViewSet(viewsets.ModelViewSet):
     queryset = Gathering.objects.all()
     serializer_class = GatheringSerializer
-    #permission_classes = (IsAuthenticated,)
+
+class ParticipateViewSet(viewsets.ModelViewSet):
+    queryset = Participate.objects.all()
+    serializer_class = ParticipateSerializer
