@@ -22,7 +22,7 @@ from rest_framework.authtoken import views
 
 router = DefaultRouter()
 router.register(r'profilePic', ProfilePicViewSet)
-router.register(r'appUser', AppUserViewSet)
+#router.register(r'appUser', AppUserViewSet)
 router.register(r'gathering', GatheringViewSet)
 router.register(r'restaurantImage', RestaurantImageViewSet)
 

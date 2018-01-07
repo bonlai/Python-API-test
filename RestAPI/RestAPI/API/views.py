@@ -20,7 +20,7 @@ class ProfilePicViewSet(viewsets.ModelViewSet):
 class RestaurantImageViewSet(viewsets.ModelViewSet):
     queryset = RestaurantImage.objects.all()
     serializer_class = RestaurantImageSerializer
-
+'''
 class AppUserViewSet(viewsets.ModelViewSet):
     queryset = AppUser.objects.all()
     serializer_class = AppUserSerializer
@@ -34,7 +34,7 @@ class AppUserViewSet(viewsets.ModelViewSet):
         appUser = AppUser.objects.get(pk=2)
         serializer = AppUserSerializer(appUser,context=serializer_context)
         return Response(serializer.data)
-
+'''
 class GatheringViewSet(viewsets.ModelViewSet):
     queryset = Gathering.objects.all()
     serializer_class = GatheringSerializer

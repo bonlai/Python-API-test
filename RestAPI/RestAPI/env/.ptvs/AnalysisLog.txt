@@ -20090,3 +20090,7 @@ F:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\Extens
 2018-01-07T00:28:03: [ERROR] allauth.socialaccount.models.SocialAccount.SocialAccount: Unknown has no name
 2018-01-07T00:28:03: End of group "c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\allauth"
 2018-01-07T00:28:07: Deleting 0 files
+
+2018-01-07T15:31:36: Start analysis
+2018-01-07T15:31:36: IncludeModulesFromModulePath = win32com
+2018-01-07T15:31:41: Deleting 0 files

@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 class ProfilePic(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     image=models.ImageField(upload_to='ProfilePic/', default='Images/None/No-img.jpg')
-
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     class Meta:
         db_table = "profilePic"
 
@@ -21,6 +21,17 @@ GENDER_CHOICES = (
     ('Other', 'Other')
 )
 
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    dob = models.DateField(null=True)
+    self_introduction = models.TextField(blank=True)
+    location = models.CharField(max_length=30, blank=True)
+    gender = models.CharField(choices=GENDER_CHOICES, max_length=6)
+    self_introduction = models.TextField(blank=True)
+    class Meta:
+        db_table = "profile"
+
+'''
 class AppUser(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30, blank=True)
@@ -37,10 +48,12 @@ class AppUser(models.Model):
 
     class Meta:
         db_table = "appUser"
+'''
 
 class Interest(models.Model):
     name = models.CharField(max_length=10)
-    user=models.ForeignKey('AppUser');
+    #user=models.ForeignKey('AppUser');
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     class Meta:
         db_table = "interest"
@@ -51,17 +64,17 @@ class Gathering(models.Model):
     start_datetime = models.DateTimeField()
     is_start=models.BooleanField()
     #created_by = models.ForeignKey('appUser')
-    created_by = models.ForeignKey('appUser',null=True,related_name ='owned', on_delete=models.CASCADE)
+    created_by = models.OneToOneField(User, on_delete=models.CASCADE)
     restaurant=models.ForeignKey('restaurant')
     #participate=models.ForeignKey('participate')
-    member=models.ManyToManyField(AppUser, through='participate',related_name ='joined')
+    #member=models.ManyToManyField(AppUser, through='participate',related_name ='joined')
 
     class Meta:
         db_table = "gathering"
 
 class Participate(models.Model):
     gathering=models.ForeignKey(Gathering, on_delete=models.CASCADE)
-    user=models.ForeignKey(AppUser, on_delete=models.CASCADE)
+    user=models.ForeignKey(User, on_delete=models.CASCADE)
     joined_datetime = models.DateTimeField(auto_now_add=True,blank=True,null=True)
     class Meta:
         db_table = "participate"
@@ -70,9 +83,10 @@ class Restaurant(models.Model):
     name = models.CharField(max_length=100)
     #phone = models.CharField(max_length=20, null=True)
     address = models.TextField()
-    self_introduction = models.TextField()
-    password = models.CharField(max_length=30)
-    created = models.DateTimeField(auto_now_add=True)
+    category = models.CharField(max_length=30)
+    #created = models.DateTimeField(auto_now_add=True)
+    average_rate=models.FloatField(blank=True,null=True)
+    review_count=models.IntegerField(blank=True,null=True)
     #image=models.ForeignKey('images');
 
     class Meta:
@@ -81,7 +95,7 @@ class Restaurant(models.Model):
 class Review(models.Model):
     comment=models.TextField()
     rating=models.IntegerField()
-    created_by = models.ForeignKey('appUser')
+    created_by = models.ForeignKey(User)
     restaurant=models.ForeignKey('restaurant')
 
     class Meta:
@@ -90,7 +104,7 @@ class Review(models.Model):
 class RestaurantImage(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     image=models.ImageField(upload_to='RestaurantImage/', default='Images/None/No-img.jpg')
-
+    restaurant=models.ForeignKey('restaurant')
     class Meta:
         db_table = "restaurantImage"
 
@@ -101,11 +115,3 @@ class OtherInfo(models.Model):
 
     class Meta:
         db_table = "otherInfo"
-
-
-
- #This code is triggered whenever a new user has been created and saved to the database
-@receiver(post_save, sender=User)
-def create_auth_token(sender, instance=None, created=False, **kwargs):
-    if created:
-        Token.objects.create(user=instance)
