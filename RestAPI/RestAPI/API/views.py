@@ -17,6 +17,10 @@ class ProfilePicViewSet(viewsets.ModelViewSet):
     serializer_class = ProfilePicSerializer
     #permission_classes = (IsAuthenticated,)
 
+class ProfileViewSet(viewsets.ModelViewSet):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
+
 class RestaurantImageViewSet(viewsets.ModelViewSet):
     queryset = RestaurantImage.objects.all()
     serializer_class = RestaurantImageSerializer
@@ -39,9 +43,3 @@ class GatheringViewSet(viewsets.ModelViewSet):
     queryset = Gathering.objects.all()
     serializer_class = GatheringSerializer
     #permission_classes = (IsAuthenticated,)
-
-#@csrf_exempt
-class CreateUserView (generics.CreateAPIView):
-    model = User
-    permission_classes = (permissions.AllowAny,)
-    serializer_class = UserCreateSerializer
