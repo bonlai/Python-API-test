@@ -25,7 +25,9 @@ router.register(r'profilePic', ProfilePicViewSet)
 #router.register(r'profile', ProfileViewSet)
 router.register(r'gathering', GatheringViewSet)
 router.register(r'restaurantImage', RestaurantImageViewSet)
-router.register(r'restaurantImage', ParticipateViewSet)
+router.register(r'participate', ParticipateViewSet)
+router.register(r'restaurant', RestaurantViewSet)
+
 
 
 urlpatterns = [

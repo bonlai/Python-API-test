@@ -50,3 +50,7 @@ class GatheringViewSet(viewsets.ModelViewSet):
 class ParticipateViewSet(viewsets.ModelViewSet):
     queryset = Participate.objects.all()
     serializer_class = ParticipateSerializer
+
+class RestaurantViewSet(viewsets.ModelViewSet):
+    queryset = Restaurant.objects.all()
+    serializer_class = RestaurantSerializer

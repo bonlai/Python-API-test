@@ -6,7 +6,7 @@ from .models import *
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id','username')
+        fields = ('id')
 
 class ProfilePicSerializer(serializers.HyperlinkedModelSerializer):
     image=serializers.ImageField(max_length=None,use_url=True)
@@ -50,16 +50,10 @@ class AppUserSerializer(serializers.HyperlinkedModelSerializer):
         model = AppUser
         fields = '__all__'
 '''
-class GatheringSerializer(serializers.HyperlinkedModelSerializer):
-    '''
-    created_by_id=serializers.HyperlinkedRelatedField(
-        read_only=True,
-        view_name='user-detail',
-    )
-    '''
+class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Gathering
-        fields = ('name','start_datetime','is_start')
+        model = Restaurant
+        fields = '__all__'
 
 class ParticipateSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -71,6 +65,20 @@ class RestaurantImageSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = RestaurantImage
         fields = '__all__'
-        
+
+class GatheringSerializer(serializers.HyperlinkedModelSerializer):
+    '''
+    created_by_id=serializers.HyperlinkedRelatedField(
+        read_only=True,
+        view_name='user-detail',
+    )
+    '''
+    #created_by= UserSerializer(read_only=False)
+    #restaurant_id=RestaurantSerializer(read_only=False)
+    class Meta:
+        model = Gathering
+        #fields = '__all__'
+        fields = ('name','start_datetime','is_start','created_by_id','restaurant')
+                
 
       
