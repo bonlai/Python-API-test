@@ -68,7 +68,8 @@ class Gathering(models.Model):
     restaurant=models.ForeignKey('restaurant')
     #participate=models.ForeignKey('participate')
     member=models.ManyToManyField(User, through='participate',related_name ='joined')
-
+    def __str__(self):
+       return self.name
     class Meta:
         db_table = "gathering"
 
@@ -85,9 +86,11 @@ class Restaurant(models.Model):
     address = models.TextField()
     category = models.CharField(max_length=30)
     #created = models.DateTimeField(auto_now_add=True)
-    average_rate=models.FloatField(blank=True,null=True)
-    review_count=models.IntegerField(blank=True,null=True)
+    average_rate=models.FloatField(default=0)
+    review_count=models.IntegerField(default=0)
     #image=models.ForeignKey('images');
+    def __str__(self):
+       return self.name
 
     class Meta:
         db_table = "restaurant"

@@ -69,6 +69,10 @@ REST_FRAMEWORK = {
 }
 '''
 
+REST_FRAMEWORK = {
+    'DATETIME_FORMAT': "%m/%d/%y %H:%M",
+}
+
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

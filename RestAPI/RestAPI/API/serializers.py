@@ -25,10 +25,6 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
         lookup_field='user_id'
     )
     '''
-    url = serializers.HyperlinkedIdentityField(
-        view_name='profile-detail',
-        lookup_field='user_id'
-    )
     class Meta:
         model = Profile
         fields = ('dob','location','gender','self_introduction','user_id')
@@ -55,7 +51,7 @@ class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
         model = Restaurant
         fields = '__all__'
 
-class ParticipateSerializer(serializers.HyperlinkedModelSerializer):
+class ParticipateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Participate
         fields = '__all__'
@@ -66,7 +62,7 @@ class RestaurantImageSerializer(serializers.HyperlinkedModelSerializer):
         model = RestaurantImage
         fields = '__all__'
 
-class GatheringSerializer(serializers.HyperlinkedModelSerializer):
+class GatheringSerializer(serializers.ModelSerializer):
     '''
     created_by_id=serializers.HyperlinkedRelatedField(
         read_only=True,
@@ -78,7 +74,7 @@ class GatheringSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Gathering
         #fields = '__all__'
-        fields = ('name','start_datetime','is_start','created_by_id','restaurant')
+        fields = ('name','start_datetime','is_start','created_by','restaurant')
                 
 
       
