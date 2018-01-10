@@ -34,7 +34,6 @@ SESSION_COOKIE_AGE = 600
 SITE_ID = 1
 
 INSTALLED_APPS = [
-    'app',
     # Add your apps here to enable them
     'django.contrib.admin',
     'django.contrib.auth',
@@ -50,6 +49,9 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'rest_auth.registration',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.twitter',
 ]
 
 #restrict number of items in one json
@@ -58,19 +60,17 @@ INSTALLED_APPS = [
 #    'PAGE_SIZE': 10
 #}
 
-'''
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
-    )
-}
-'''
 
 REST_FRAMEWORK = {
-    'DATETIME_FORMAT': "%m/%d/%y %H:%M",
+    'DATETIME_FORMAT': "%m/%d/%y %H:%M"
+    '''
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+        'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    )
+    '''
 }
 
 MIDDLEWARE_CLASSES = [

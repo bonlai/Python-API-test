@@ -56,7 +56,7 @@ class ParticipateSerializer(serializers.ModelSerializer):
         model = Participate
         fields = '__all__'
 
-class RestaurantImageSerializer(serializers.HyperlinkedModelSerializer):
+class RestaurantImageSerializer(serializers.ModelSerializer):
     image=serializers.ImageField(max_length=None,use_url=True)
     class Meta:
         model = RestaurantImage

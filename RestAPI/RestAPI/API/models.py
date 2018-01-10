@@ -107,7 +107,7 @@ class Review(models.Model):
 class RestaurantImage(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     image=models.ImageField(upload_to='RestaurantImage/', default='Images/None/No-img.jpg')
-    restaurant=models.OneToOneField(Restaurant, on_delete=models.CASCADE,primary_key=True)
+    restaurant=models.ForeignKey(Restaurant, on_delete=models.CASCADE)
     class Meta:
         db_table = "restaurantImage"
 
