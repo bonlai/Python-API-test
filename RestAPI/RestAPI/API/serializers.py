@@ -52,9 +52,14 @@ class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 class ParticipateSerializer(serializers.ModelSerializer):
+    gathering = serializers.HyperlinkedRelatedField(
+        queryset=Gathering.objects.all(),
+        view_name='gathering-detail'
+    )
+
     class Meta:
         model = Participate
-        fields = '__all__'
+        fields = ('user','gathering')
 
 class RestaurantImageSerializer(serializers.ModelSerializer):
     image=serializers.ImageField(max_length=None,use_url=True)
@@ -75,6 +80,15 @@ class GatheringSerializer(serializers.ModelSerializer):
         model = Gathering
         #fields = '__all__'
         fields = ('name','start_datetime','is_start','created_by','restaurant')
-                
+
+class InterestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Interest
+        fields = '__all__'
+
+class ReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Review
+        fields = '__all__'                
 
       

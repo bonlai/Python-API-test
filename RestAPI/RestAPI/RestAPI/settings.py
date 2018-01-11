@@ -63,15 +63,16 @@ INSTALLED_APPS = [
 
 REST_FRAMEWORK = {
     'DATETIME_FORMAT': "%m/%d/%y %H:%M"
-    '''
+}
+
+'''
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
     ),
         'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
     )
-    '''
-}
+'''
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',

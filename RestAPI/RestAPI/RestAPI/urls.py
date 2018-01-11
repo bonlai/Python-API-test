@@ -27,6 +27,8 @@ router.register(r'gathering', GatheringViewSet)
 router.register(r'restaurantImage', RestaurantImageViewSet)
 router.register(r'participate', ParticipateViewSet)
 router.register(r'restaurant', RestaurantViewSet)
+router.register(r'Interest', InterestViewSet)
+router.register(r'review', ReviewViewSet)
 
 
 
@@ -36,10 +38,10 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^api/', include(router.urls)),
     #url(r'^api-token-auth/', views.obtain_auth_token),
-    url(r'^api/rest-auth/', include('rest_auth.urls')),
-    url(r'^api/rest-auth/registration/', include('rest_auth.registration.urls')),
+    url(r'^rest-auth/', include('rest_auth.urls')),
+    url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
     url(r'^api/profile/(?P<pk>[0-9]+)/$', ProfileDetail.as_view()),
-    url(r'^api/rest-auth/facebook/$', FacebookLogin.as_view(), name='fb_login')
+    url(r'^rest-auth/facebook/$', FacebookLogin.as_view(), name='fb_login')
     #url(r'^appUser/$', AppUserViewSet.testing),
 ]
 
