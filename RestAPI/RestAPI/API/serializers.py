@@ -46,6 +46,12 @@ class AppUserSerializer(serializers.HyperlinkedModelSerializer):
         model = AppUser
         fields = '__all__'
 '''
+
+class RestaurantImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RestaurantImage
+        fields = '__all__'
+
 class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Restaurant
@@ -61,11 +67,7 @@ class ParticipateSerializer(serializers.ModelSerializer):
         model = Participate
         fields = ('user','gathering')
 
-class RestaurantImageSerializer(serializers.ModelSerializer):
-    image=serializers.ImageField(max_length=None,use_url=True)
-    class Meta:
-        model = RestaurantImage
-        fields = '__all__'
+
 
 class GatheringSerializer(serializers.ModelSerializer):
     '''
@@ -76,10 +78,11 @@ class GatheringSerializer(serializers.ModelSerializer):
     '''
     #created_by= UserSerializer(read_only=False)
     #restaurant_id=RestaurantSerializer(read_only=False)
+   # member=UserSerializer();
     class Meta:
         model = Gathering
         #fields = '__all__'
-        fields = ('name','start_datetime','is_start','created_by','restaurant')
+        fields = ('name','start_datetime','is_start','created_by','restaurant','member')
 
 class InterestSerializer(serializers.ModelSerializer):
     class Meta:

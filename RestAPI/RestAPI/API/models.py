@@ -52,8 +52,6 @@ class AppUser(models.Model):
 
 class Interest(models.Model):
     name = models.CharField(max_length=10)
-    #user=models.ForeignKey('AppUser');
-    #user = models.ForeignKey(User)
     user=models.ManyToManyField(User,related_name ='enjoy')
     class Meta:
         db_table = "interest"
