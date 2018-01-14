@@ -43,6 +43,7 @@ urlpatterns = [
     url(r'^api/profile/(?P<pk>[0-9]+)/$', ProfileDetail.as_view()),
     url(r'^api/profile/(?P<pk>[0-9]+)/profile_pic_udate/$', ProfilePicUpdate.as_view()),
     url(r'^api/user_list/$', ListUser.as_view()),
+    url(r'^api/user/(?P<userid>[0-9]+)/gathering/$', UserGatheringList.as_view()),
     url(r'^rest-auth/facebook/$', FacebookLogin.as_view(), name='fb_login')
     #url(r'^appUser/$', AppUserViewSet.testing),
 ]

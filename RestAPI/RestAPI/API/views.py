@@ -38,12 +38,12 @@ class ProfilePicUpdate(generics.RetrieveUpdateAPIView):
 class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,
-                      IsOwnerOrReadOnly,)
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
 
 class ProfileViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
     #http_method_names = ['get', 'post', 'head']
 
 class RestaurantImageViewSet(viewsets.ModelViewSet):
@@ -67,10 +67,25 @@ class AppUserViewSet(viewsets.ModelViewSet):
 class GatheringViewSet(viewsets.ModelViewSet):
     queryset = Gathering.objects.all()
     serializer_class = GatheringSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
+    def perform_create(self, serializer):
+        # Include the owner attribute directly, rather than from request data.
+        instance = serializer.save(user=self.request.user)
+
+class UserGatheringList(generics.ListAPIView):
+    model = Gathering
+    queryset = Gathering.objects.all()
+    serializer_class = GatheringSerializer
+
+    def get_queryset(self):
+        id = self.kwargs['userid']
+        return Gathering.objects.filter(user__id=id)
+
 
 class ParticipateViewSet(viewsets.ModelViewSet):
     queryset = Participate.objects.all()
     serializer_class = ParticipateSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
 
 class RestaurantViewSet(viewsets.ModelViewSet):
     queryset = Restaurant.objects.all()
@@ -79,10 +94,12 @@ class RestaurantViewSet(viewsets.ModelViewSet):
 class InterestViewSet(viewsets.ModelViewSet):
     queryset = Interest.objects.all()
     serializer_class = InterestSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
 
 class ReviewViewSet(viewsets.ModelViewSet):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
 
 from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
 from rest_auth.registration.views import SocialLoginView

@@ -72,19 +72,12 @@ class ParticipateSerializer(serializers.ModelSerializer):
 
 
 class GatheringSerializer(serializers.ModelSerializer):
-    '''
-    created_by_id=serializers.HyperlinkedRelatedField(
-        read_only=True,
-        view_name='user-detail',
-    )
-    '''
-    #created_by= UserSerializer(read_only=False)
-    #restaurant_id=RestaurantSerializer(read_only=False)
-   # member=UserSerializer();
+    user = serializers.PrimaryKeyRelatedField(read_only=True) 
     class Meta:
         model = Gathering
         #fields = '__all__'
-        fields = ('id','name','start_datetime','is_start','created_by','restaurant','member')
+        fields = ('id','name','start_datetime','is_start','user','restaurant','member')
+
 
 class InterestSerializer(serializers.ModelSerializer):
     class Meta:

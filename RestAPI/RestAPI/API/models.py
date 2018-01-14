@@ -32,25 +32,6 @@ class Profile(models.Model):
     class Meta:
         db_table = "profile"
 
-'''
-class AppUser(models.Model):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30, blank=True)
-    email = models.EmailField(unique=True)
-    username = models.CharField(max_length=100, blank=True, null=True)
-    dob = models.DateField(null=True)
-    #phone = models.CharField(max_length=20, null=True)
-    gender = models.CharField(choices=GENDER_CHOICES, max_length=6)
-    address = models.TextField(blank=True)
-    self_introduction = models.TextField(blank=True)
-    password = models.CharField(max_length=20)
-    created = models.DateTimeField(auto_now_add=True)
-    profilePic=models.ForeignKey('profilePic',null=True, blank=True);
-
-    class Meta:
-        db_table = "appUser"
-'''
-
 class Interest(models.Model):
     name = models.CharField(max_length=10)
     user=models.ManyToManyField(User,related_name ='enjoy')
@@ -63,7 +44,7 @@ class Gathering(models.Model):
     start_datetime = models.DateTimeField()
     is_start=models.BooleanField()
     #created_by = models.ForeignKey('appUser')
-    created_by = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     restaurant=models.ForeignKey('restaurant')
     #participate=models.ForeignKey('participate')
     member=models.ManyToManyField(User, through='participate',related_name ='joined')
@@ -97,7 +78,7 @@ class Restaurant(models.Model):
 class Review(models.Model):
     comment=models.TextField()
     rating=models.IntegerField()
-    created_by = models.ForeignKey(User)
+    user = models.ForeignKey(User)
     restaurant=models.ForeignKey(Restaurant)
 
     class Meta:
