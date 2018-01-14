@@ -6,14 +6,14 @@ from .models import *
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('id')
+        fields = ('id','first_name','last_name')
 
 class ProfilePicSerializer(serializers.HyperlinkedModelSerializer):
     image=serializers.ImageField(max_length=None,use_url=True)
     #user_id = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
 
     class Meta:
-        model = ProfilePic
+        model = Profile
         fields = ('image','user_id')
 
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):
@@ -25,6 +25,7 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
         lookup_field='user_id'
     )
     '''
+    #image=serializers.ImageField(max_length=None,use_url=True)
     class Meta:
         model = Profile
         fields = ('dob','location','gender','self_introduction','user_id')
@@ -58,11 +59,12 @@ class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 class ParticipateSerializer(serializers.ModelSerializer):
+    '''
     gathering = serializers.HyperlinkedRelatedField(
         queryset=Gathering.objects.all(),
         view_name='gathering-detail'
     )
-
+    '''
     class Meta:
         model = Participate
         fields = ('user','gathering')
@@ -82,7 +84,7 @@ class GatheringSerializer(serializers.ModelSerializer):
     class Meta:
         model = Gathering
         #fields = '__all__'
-        fields = ('name','start_datetime','is_start','created_by','restaurant','member')
+        fields = ('id','name','start_datetime','is_start','created_by','restaurant','member')
 
 class InterestSerializer(serializers.ModelSerializer):
     class Meta:

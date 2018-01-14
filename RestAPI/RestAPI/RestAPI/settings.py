@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.twitter',
+    'django_filters',
 ]
 
 #restrict number of items in one json
@@ -62,7 +63,10 @@ INSTALLED_APPS = [
 
 
 REST_FRAMEWORK = {
-    'DATETIME_FORMAT': "%m/%d/%y %H:%M"
+    'DATETIME_FORMAT': "%m/%d/%y %H:%M",
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
 }
 
 '''

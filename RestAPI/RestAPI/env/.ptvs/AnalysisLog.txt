@@ -20094,3 +20094,42 @@ F:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\Extens
 2018-01-07T15:31:36: Start analysis
 2018-01-07T15:31:36: IncludeModulesFromModulePath = win32com
 2018-01-07T15:31:41: Deleting 0 files
+
+2018-01-14T17:57:09: Start analysis
+2018-01-14T17:57:09: IncludeModulesFromModulePath = win32com
+2018-01-14T17:57:13: Deleting 0 files
+
+2018-01-14T18:52:50: Start analysis
+2018-01-14T18:52:50: IncludeModulesFromModulePath = win32com
+2018-01-14T18:52:54: Including c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters because django_filters.compat needs updating
+2018-01-14T18:52:55: Deleting 0 files
+2018-01-14T18:52:55: astropy.CallDepth = 0
+2018-01-14T18:52:55: delphixpy.CallDepth = 0
+2018-01-14T18:52:55: matplotlib.CallDepth = 3
+2018-01-14T18:52:55: pandas.CallDepth = 0
+2018-01-14T18:52:55: sympy.CallDepth = 0
+2018-01-14T18:52:55: Start group "c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters" with 16 files
+2018-01-14T18:52:55: Parsing complete
+2018-01-14T18:52:55: Analyzing "django_filters.compat" ("c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters\compat.py")
+2018-01-14T18:52:55: Analyzing "django_filters.conf" ("c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters\conf.py")
+2018-01-14T18:52:55: Analyzing "django_filters.constants" ("c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters\constants.py")
+2018-01-14T18:52:55: Analyzing "django_filters.exceptions" ("c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters\exceptions.py")
+2018-01-14T18:52:55: Analyzing "django_filters.fields" ("c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters\fields.py")
+2018-01-14T18:52:55: Analyzing "django_filters.filters" ("c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters\filters.py")
+2018-01-14T18:52:55: Analyzing "django_filters.filterset" ("c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters\filterset.py")
+2018-01-14T18:52:55: Analyzing "django_filters.models" ("c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters\models.py")
+2018-01-14T18:52:55: Analyzing "django_filters.utils" ("c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters\utils.py")
+2018-01-14T18:52:55: Analyzing "django_filters.views" ("c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters\views.py")
+2018-01-14T18:52:55: Analyzing "django_filters.widgets" ("c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters\widgets.py")
+2018-01-14T18:52:55: Analyzing "django_filters" ("c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters\__init__.py")
+2018-01-14T18:52:55: Analyzing "django_filters.rest_framework.backends" ("c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters\rest_framework\backends.py")
+2018-01-14T18:52:55: Analyzing "django_filters.rest_framework.filters" ("c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters\rest_framework\filters.py")
+2018-01-14T18:52:55: Analyzing "django_filters.rest_framework.filterset" ("c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters\rest_framework\filterset.py")
+2018-01-14T18:52:55: Analyzing "django_filters.rest_framework" ("c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters\rest_framework\__init__.py")
+2018-01-14T18:52:55: Starting analysis of 16 modules
+2018-01-14T18:52:58: Analysis complete
+2018-01-14T18:52:58: Saving group "c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters"
+2018-01-14T18:52:58: [ERROR] django_filters.widgets.BaseCSVWidget.BaseCSVWidget: Unknown has no name
+2018-01-14T18:52:58: [ERROR] django_filters.widgets.LinkWidget.LinkWidget: Unknown has no name
+2018-01-14T18:52:58: End of group "c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters"
+2018-01-14T18:53:02: Deleting 0 files

@@ -10,20 +10,41 @@ from rest_framework.decorators import detail_route, list_route
 from rest_framework.response import Response
 
 from rest_framework import generics
+from django_filters.rest_framework import DjangoFilterBackend
+#from rest_framework import filters
+from django_filters import rest_framework as filters
+
+from rest_framework import permissions
+from .permissions import IsOwnerOrReadOnly
 #from django.views.decorators.csrf import csrf_exempt
 
-class ProfilePicViewSet(viewsets.ModelViewSet):
-    queryset = ProfilePic.objects.all()
+class ListUser(generics.ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    filter_backends = (DjangoFilterBackend,)
+    filter_fields = ('id', 'first_name')
+    #filter_fields = ('first_name',)
+
+class UserFilter(filters.FilterSet):
+    class Meta:
+        model = User
+        fields = ('id', 'first_name')
+
+class ProfilePicUpdate(generics.RetrieveUpdateAPIView):
+    queryset = Profile.objects.all()
     serializer_class = ProfilePicSerializer
     #permission_classes = (IsAuthenticated,)
 
 class ProfileDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
+    permission_classes = (permissions.IsAuthenticatedOrReadOnly,
+                      IsOwnerOrReadOnly,)
 
 class ProfileViewSet(viewsets.ModelViewSet):
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
+    #http_method_names = ['get', 'post', 'head']
 
 class RestaurantImageViewSet(viewsets.ModelViewSet):
     queryset = RestaurantImage.objects.all()

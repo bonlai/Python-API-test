@@ -38,6 +38,7 @@
     <Compile Include="API\apps.py" />
     <Compile Include="API\migrations\__init__.py" />
     <Compile Include="API\models.py" />
+    <Compile Include="API\permissions.py" />
     <Compile Include="API\tests.py" />
     <Compile Include="API\views.py" />
     <Compile Include="API\__init__.py" />

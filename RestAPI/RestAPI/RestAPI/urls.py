@@ -21,7 +21,7 @@ from rest_framework.authtoken import views
 # admin.autodiscover()
 
 router = DefaultRouter()
-router.register(r'profilePic', ProfilePicViewSet)
+#router.register(r'profilePic', ProfilePicViewSet)
 #router.register(r'profile', ProfileViewSet)
 router.register(r'gathering', GatheringViewSet)
 router.register(r'restaurantImage', RestaurantImageViewSet)
@@ -41,6 +41,8 @@ urlpatterns = [
     url(r'^rest-auth/', include('rest_auth.urls')),
     url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
     url(r'^api/profile/(?P<pk>[0-9]+)/$', ProfileDetail.as_view()),
+    url(r'^api/profile/(?P<pk>[0-9]+)/profile_pic_udate/$', ProfilePicUpdate.as_view()),
+    url(r'^api/user_list/$', ListUser.as_view()),
     url(r'^rest-auth/facebook/$', FacebookLogin.as_view(), name='fb_login')
     #url(r'^appUser/$', AppUserViewSet.testing),
 ]
