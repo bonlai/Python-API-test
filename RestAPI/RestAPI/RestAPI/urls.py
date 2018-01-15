@@ -27,7 +27,7 @@ router.register(r'gathering', GatheringViewSet)
 router.register(r'restaurantImage', RestaurantImageViewSet)
 router.register(r'participate', ParticipateViewSet)
 router.register(r'restaurant', RestaurantViewSet)
-router.register(r'Interest', InterestViewSet)
+router.register(r'interest', InterestViewSet)
 router.register(r'review', ReviewViewSet)
 
 
@@ -38,14 +38,17 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^api/', include(router.urls)),
     #url(r'^api-token-auth/', views.obtain_auth_token),
-    url(r'^rest-auth/', include('rest_auth.urls')),
-    url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
-    url(r'^api/profile/(?P<pk>[0-9]+)/$', ProfileDetail.as_view()),
-    url(r'^api/profile/(?P<pk>[0-9]+)/profile_pic_udate/$', ProfilePicUpdate.as_view()),
     url(r'^api/user_list/$', ListUser.as_view()),
+    url(r'^api/user/(?P<pk>[0-9]+)/profile/$', ProfileDetail.as_view(),name = 'add'),
+    url(r'^api/user/(?P<pk>[0-9]+)/profile/profile_pic_udate/$', ProfilePicUpdate.as_view()),
     url(r'^api/user/(?P<userid>[0-9]+)/gathering/$', UserGatheringList.as_view()),
-    url(r'^rest-auth/facebook/$', FacebookLogin.as_view(), name='fb_login')
-    #url(r'^appUser/$', AppUserViewSet.testing),
+    #url(r'^api/user/(?P<userid>[0-9]+)/review/$', UserGatheringList.as_view()),
+    #url(r'^api/user/(?P<userid>[0-9]+)/interest/$', UserGatheringList.as_view()),
+    #url(r'^api/user/(?P<userid>[0-9]+)/interest/edit/$', UserGatheringList.as_view()),
+    #user registration and login url
+    url(r'^api/rest-auth/', include('rest_auth.urls')),
+    url(r'^api/rest-auth/registration/', include('rest_auth.registration.urls')),
+    url(r'^api/rest-auth/facebook/$', FacebookLogin.as_view(), name='fb_login')
 ]
 
 #for media access (e.g. images)

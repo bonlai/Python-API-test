@@ -22,7 +22,7 @@ GENDER_CHOICES = (
 )
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE,primary_key=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE,primary_key=True,related_name='profile')
     dob = models.DateField(null=True)
     self_introduction = models.TextField(blank=True)
     location = models.CharField(max_length=30, blank=True)

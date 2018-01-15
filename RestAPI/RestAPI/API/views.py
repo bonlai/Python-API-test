@@ -17,19 +17,22 @@ from django_filters import rest_framework as filters
 from rest_framework import permissions
 from .permissions import IsOwnerOrReadOnly
 #from django.views.decorators.csrf import csrf_exempt
+from django.core.exceptions import ValidationError
+from rest_framework.exceptions import APIException
 
 class ListUser(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     filter_backends = (DjangoFilterBackend,)
-    filter_fields = ('id', 'first_name')
+    filter_fields = ('id', 'username')
     #filter_fields = ('first_name',)
 
 class UserFilter(filters.FilterSet):
     class Meta:
         model = User
-        fields = ('id', 'first_name')
+        fields = ('id', 'username')
 
+#will be discarded
 class ProfilePicUpdate(generics.RetrieveUpdateAPIView):
     queryset = Profile.objects.all()
     serializer_class = ProfilePicSerializer
@@ -86,6 +89,11 @@ class ParticipateViewSet(viewsets.ModelViewSet):
     queryset = Participate.objects.all()
     serializer_class = ParticipateSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
+    def perform_create(self, serializer):
+        queryset = Participate.objects.filter(user=self.request.user,gathering=serializer.validated_data.get('gathering'))
+        if queryset.exists():
+            raise APIException("You have signed up")
+        instance = serializer.save(user=self.request.user)
 
 class RestaurantViewSet(viewsets.ModelViewSet):
     queryset = Restaurant.objects.all()
@@ -100,6 +108,9 @@ class ReviewViewSet(viewsets.ModelViewSet):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
+    def perform_create(self, serializer):
+        # Include the owner attribute directly, rather than from request data.
+        instance = serializer.save(user=self.request.user)
 
 from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
 from rest_auth.registration.views import SocialLoginView

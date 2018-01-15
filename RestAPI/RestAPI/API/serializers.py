@@ -2,33 +2,18 @@ from rest_framework import serializers
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 from .models import *
-
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ('id','first_name','last_name')
+from rest_framework.validators import UniqueTogetherValidator
 
 class ProfilePicSerializer(serializers.HyperlinkedModelSerializer):
     image=serializers.ImageField(max_length=None,use_url=True)
-    #user_id = serializers.PrimaryKeyRelatedField(queryset=User.objects.all())
-
     class Meta:
         model = Profile
-        fields = ('image','user_id')
+        fields = ('user_id','image')
 
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):
-    #user = UserSerializer()
-    #url = serializers.HyperlinkedIdentityField(view_name="API:profile-detail")
-    '''
-        url = serializers.HyperlinkedIdentityField(
-        view_name='profile-detail',
-        lookup_field='user_id'
-    )
-    '''
-    #image=serializers.ImageField(max_length=None,use_url=True)
     class Meta:
         model = Profile
-        fields = ('dob','location','gender','self_introduction','user_id')
+        fields = ('user_id','dob','location','gender','self_introduction',)
 
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
@@ -41,13 +26,12 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
         instance.profile.save()
         instance.profilepic.save()
 
-'''
-class AppUserSerializer(serializers.HyperlinkedModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
+    profile = ProfileSerializer()
     class Meta:
-        model = AppUser
-        fields = '__all__'
-'''
-
+        model = User
+        fields = ('id','username','first_name','last_name','profile')
+        
 class RestaurantImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = RestaurantImage
@@ -59,17 +43,10 @@ class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 class ParticipateSerializer(serializers.ModelSerializer):
-    '''
-    gathering = serializers.HyperlinkedRelatedField(
-        queryset=Gathering.objects.all(),
-        view_name='gathering-detail'
-    )
-    '''
+    user = serializers.PrimaryKeyRelatedField(read_only=True) 
     class Meta:
         model = Participate
-        fields = ('user','gathering')
-
-
+        fields = ('id','user','gathering')
 
 class GatheringSerializer(serializers.ModelSerializer):
     user = serializers.PrimaryKeyRelatedField(read_only=True) 
@@ -85,6 +62,7 @@ class InterestSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class ReviewSerializer(serializers.ModelSerializer):
+    user = serializers.PrimaryKeyRelatedField(read_only=True) 
     class Meta:
         model = Review
         fields = '__all__'                
