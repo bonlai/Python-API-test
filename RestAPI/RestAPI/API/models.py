@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 
 class ProfilePic(models.Model):
     created = models.DateTimeField(auto_now_add=True)
-    image=models.ImageField(upload_to='ProfilePic/', default='Images/None/No-img.jpg')
+    image=models.ImageField(upload_to='ProfilePic/', default='ProfilePic/default.png')
     user = models.OneToOneField(User, on_delete=models.CASCADE,primary_key=True)
     class Meta:
         db_table = "profilePic"
@@ -28,7 +28,7 @@ class Profile(models.Model):
     location = models.CharField(max_length=30, blank=True)
     gender = models.CharField(choices=GENDER_CHOICES, max_length=6)
     self_introduction = models.TextField(blank=True)
-    image=models.ImageField(upload_to='ProfilePic/', default='Images/None/No-img.jpg',blank=True,null=True)
+    image=models.ImageField(upload_to='ProfilePic/', default='ProfilePic/default.png',blank=True,null=True)
     class Meta:
         db_table = "profile"
 
@@ -87,7 +87,7 @@ class Review(models.Model):
 class RestaurantImage(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     image=models.ImageField(upload_to='RestaurantImage/', default='Images/None/No-img.jpg')
-    restaurant=models.ForeignKey(Restaurant, on_delete=models.CASCADE)
+    restaurant=models.ForeignKey(Restaurant, on_delete=models.CASCADE,related_name='image')
     class Meta:
         db_table = "restaurantImage"
 

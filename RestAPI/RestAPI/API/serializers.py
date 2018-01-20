@@ -11,9 +11,10 @@ class ProfilePicSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('user_id','image')
 
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):
+    image=serializers.ImageField(max_length=None,use_url=True)
     class Meta:
         model = Profile
-        fields = ('user_id','dob','location','gender','self_introduction',)
+        fields = ('user_id','dob','location','gender','self_introduction','image')
 
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
@@ -38,9 +39,10 @@ class RestaurantImageSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
+    image = RestaurantImageSerializer(many=True, read_only=True)
     class Meta:
         model = Restaurant
-        fields = '__all__'
+        fields = ('id','name','image','address','category','average_rate','review_count')
 
 class ParticipateSerializer(serializers.ModelSerializer):
     user = serializers.PrimaryKeyRelatedField(read_only=True) 
@@ -53,8 +55,7 @@ class GatheringSerializer(serializers.ModelSerializer):
     class Meta:
         model = Gathering
         #fields = '__all__'
-        fields = ('id','name','start_datetime','is_start','user','restaurant','member')
-
+        fields = ('id','name','details','start_datetime','is_start','user','restaurant','member')
 
 class InterestSerializer(serializers.ModelSerializer):
     class Meta:
