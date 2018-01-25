@@ -20133,3 +20133,7 @@ F:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\Extens
 2018-01-14T18:52:58: [ERROR] django_filters.widgets.LinkWidget.LinkWidget: Unknown has no name
 2018-01-14T18:52:58: End of group "c:\users\bon lai\desktop\python api test\restapi\restapi\env\lib\site-packages\django_filters"
 2018-01-14T18:53:02: Deleting 0 files
+
+2018-01-23T17:50:08: Start analysis
+2018-01-23T17:50:08: IncludeModulesFromModulePath = win32com
+2018-01-23T17:50:13: Deleting 0 files

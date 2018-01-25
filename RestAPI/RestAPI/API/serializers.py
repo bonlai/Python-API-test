@@ -11,7 +11,7 @@ class ProfilePicSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('user_id','image')
 
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):
-    image=serializers.ImageField(max_length=None,use_url=True)
+    image=serializers.ImageField(max_length=None,use_url=True,read_only=True)
     class Meta:
         model = Profile
         fields = ('user_id','dob','location','gender','self_introduction','image')

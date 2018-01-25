@@ -21,8 +21,6 @@ from rest_framework.authtoken import views
 # admin.autodiscover()
 
 router = DefaultRouter()
-#router.register(r'profilePic', ProfilePicViewSet)
-#router.register(r'profile', ProfileViewSet)
 router.register(r'gathering', GatheringViewSet)
 router.register(r'restaurantImage', RestaurantImageViewSet)
 router.register(r'participate', ParticipateViewSet)
@@ -42,9 +40,9 @@ urlpatterns = [
     url(r'^api/user/(?P<pk>[0-9]+)/profile/$', ProfileDetail.as_view(),name = 'add'),
     url(r'^api/user/(?P<pk>[0-9]+)/profile/profile_pic_udate/$', ProfilePicUpdate.as_view()),
     url(r'^api/user/(?P<userid>[0-9]+)/gathering/$', UserGatheringList.as_view()),
+    url(r'^api/review_filter/$', ReviewByRestaurant.as_view()),
     #url(r'^api/user/(?P<userid>[0-9]+)/review/$', UserGatheringList.as_view()),
     #url(r'^api/user/(?P<userid>[0-9]+)/interest/$', UserGatheringList.as_view()),
-    #url(r'^api/user/(?P<userid>[0-9]+)/interest/edit/$', UserGatheringList.as_view()),
     #user registration and login url
     url(r'^api/rest-auth/', include('rest_auth.urls')),
     url(r'^api/rest-auth/registration/', include('rest_auth.registration.urls')),

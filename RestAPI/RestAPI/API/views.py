@@ -70,7 +70,7 @@ class AppUserViewSet(viewsets.ModelViewSet):
 class GatheringViewSet(viewsets.ModelViewSet):
     queryset = Gathering.objects.all()
     serializer_class = GatheringSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
+    #permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
     def perform_create(self, serializer):
         # Include the owner attribute directly, rather than from request data.
         instance = serializer.save(user=self.request.user)
@@ -108,9 +108,30 @@ class ReviewViewSet(viewsets.ModelViewSet):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
+
     def perform_create(self, serializer):
-        # Include the owner attribute directly, rather than from request data.
+        restaurant = Restaurant.objects.get(id=self.request.POST['restaurant'])
+        if restaurant.review_count == 0:
+            restaurant.review_count += 1
+            restaurant.average_rate+=float(self.request.POST['rating'])
+        else:
+            restaurant.review_count += 1
+            restaurant.average_rate+=(float(self.request.POST['rating'])-restaurant.average_rate)/restaurant.review_count
+
+        restaurant.save()
         instance = serializer.save(user=self.request.user)
+
+class ReviewByRestaurant(generics.ListAPIView):
+    queryset = Review.objects.all()
+    serializer_class = ReviewSerializer
+    filter_backends = (DjangoFilterBackend,)
+    filter_fields = ('restaurant',)
+    #filter_fields = ('first_name',)
+
+class ReviewFilter(filters.FilterSet):
+    class Meta:
+        model = Review
+        fields = ('restaurant',)
 
 from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
 from rest_auth.registration.views import SocialLoginView

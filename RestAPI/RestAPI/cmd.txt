@@ -5,6 +5,7 @@ python manage.py makemigrations
 python manage.py migrate
 
 cd "Desktop\Python API test\RestAPI\RestAPI\env\Scripts"
+cd ../../
 
 pip freeze > requirements.txt
 pip install -r requirements.txt
