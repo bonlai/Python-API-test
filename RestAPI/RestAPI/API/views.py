@@ -19,6 +19,7 @@ from .permissions import IsOwnerOrReadOnly
 #from django.views.decorators.csrf import csrf_exempt
 from django.core.exceptions import ValidationError
 from rest_framework.exceptions import APIException
+from django.db.models import Q
 
 class ListUser(generics.ListAPIView):
     queryset = User.objects.all()
@@ -82,7 +83,7 @@ class UserGatheringList(generics.ListAPIView):
 
     def get_queryset(self):
         id = self.kwargs['userid']
-        return Gathering.objects.filter(user__id=id)
+        return Gathering.objects.filter(Q(member__id=id ) | Q(user__id=id))#user__id=id,
 
 
 class ParticipateViewSet(viewsets.ModelViewSet):
