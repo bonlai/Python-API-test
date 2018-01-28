@@ -60,7 +60,7 @@ class GatheringSerializer(serializers.ModelSerializer):
 class InterestSerializer(serializers.ModelSerializer):
     class Meta:
         model = Interest
-        fields = '__all__'
+        fields = ('id','name',)
 
 class ReviewSerializer(serializers.ModelSerializer):
     user = serializers.PrimaryKeyRelatedField(read_only=True) 

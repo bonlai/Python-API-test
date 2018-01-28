@@ -89,10 +89,13 @@ class UserGatheringList(generics.ListAPIView):
 class ParticipateViewSet(viewsets.ModelViewSet):
     queryset = Participate.objects.all()
     serializer_class = ParticipateSerializer
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_fields = ('user','gathering')
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
     def perform_create(self, serializer):
         queryset = Participate.objects.filter(user=self.request.user,gathering=serializer.validated_data.get('gathering'))
         if queryset.exists():
+            queryset.delete()
             raise APIException("You have signed up")
         instance = serializer.save(user=self.request.user)
 
@@ -103,13 +106,24 @@ class RestaurantViewSet(viewsets.ModelViewSet):
 class InterestViewSet(viewsets.ModelViewSet):
     queryset = Interest.objects.all()
     serializer_class = InterestSerializer
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_fields = ('user',)
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
+    def perform_create(self, serializer):
+        try:
+            interest = Interest.objects.get(name__iexact=serializer.validated_data.get('name'))
+            interest.user.add(self.request.user)
+            interest.save()
+        except Interest.DoesNotExist:           
+            instance = serializer.save()    
+            instance.user.add(self.request.user)
 
 class ReviewViewSet(viewsets.ModelViewSet):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
-
+    filter_backends = (filters.DjangoFilterBackend,)
+    filter_fields = ('restaurant','user')
     def perform_create(self, serializer):
         restaurant = Restaurant.objects.get(id=self.request.POST['restaurant'])
         if restaurant.review_count == 0:
@@ -121,18 +135,6 @@ class ReviewViewSet(viewsets.ModelViewSet):
 
         restaurant.save()
         instance = serializer.save(user=self.request.user)
-
-class ReviewByRestaurant(generics.ListAPIView):
-    queryset = Review.objects.all()
-    serializer_class = ReviewSerializer
-    filter_backends = (DjangoFilterBackend,)
-    filter_fields = ('restaurant',)
-    #filter_fields = ('first_name',)
-
-class ReviewFilter(filters.FilterSet):
-    class Meta:
-        model = Review
-        fields = ('restaurant',)
 
 from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
 from rest_auth.registration.views import SocialLoginView
