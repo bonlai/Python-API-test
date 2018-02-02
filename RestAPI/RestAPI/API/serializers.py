@@ -62,10 +62,16 @@ class InterestSerializer(serializers.ModelSerializer):
         model = Interest
         fields = ('id','name',)
 
+class UsernameSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id','username')
+
 class ReviewSerializer(serializers.ModelSerializer):
-    user = serializers.PrimaryKeyRelatedField(read_only=True) 
+    #user = serializers.PrimaryKeyRelatedField(read_only=True) 
+    user=UsernameSerializer(read_only=True,required=False, allow_null=True)
     class Meta:
         model = Review
-        fields = '__all__'                
+        fields = ('id','user','comment','rating','restaurant')
 
       
