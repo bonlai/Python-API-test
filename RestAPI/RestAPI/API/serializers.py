@@ -57,6 +57,17 @@ class GatheringSerializer(serializers.ModelSerializer):
         #fields = '__all__'
         fields = ('id','name','details','start_datetime','is_start','user','restaurant','member')
 
+class RestaurantLocationSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Restaurant
+        fields = ('address',)
+
+class GatheringLocationSerializer(serializers.ModelSerializer):
+    restaurant = RestaurantLocationSerializer()
+    class Meta:
+        model = Gathering
+        fields = ('id','name','restaurant')
+
 class InterestSerializer(serializers.ModelSerializer):
     class Meta:
         model = Interest

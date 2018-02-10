@@ -76,6 +76,22 @@ class GatheringViewSet(viewsets.ModelViewSet):
         # Include the owner attribute directly, rather than from request data.
         instance = serializer.save(user=self.request.user)
 
+    @list_route()
+    def location(self, request):
+        gathering = Gathering.objects.all()
+        serializer = GatheringLocationSerializer(gathering, many=True)
+        return Response(serializer.data)
+'''
+    @detail_route(methods=['get'])
+    def participant(self, request, pk=None):
+        members=self.get_object.
+        gathering = self.get_object()
+        serializer = ProfileSerializer(user=request.data.user)
+        #if serializer.is_valid():
+         #   return Response({'status': 'password set'})
+        #else:
+        return Response({'status': 'password set'})
+'''
 class UserGatheringList(generics.ListAPIView):
     model = Gathering
     queryset = Gathering.objects.all()
@@ -84,7 +100,6 @@ class UserGatheringList(generics.ListAPIView):
     def get_queryset(self):
         id = self.kwargs['userid']
         return Gathering.objects.filter(Q(member__id=id ) | Q(user__id=id))#user__id=id,
-
 
 class ParticipateViewSet(viewsets.ModelViewSet):
     queryset = Participate.objects.all()
