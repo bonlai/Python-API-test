@@ -70,6 +70,7 @@ class AppUserViewSet(viewsets.ModelViewSet):
 '''
 class GatheringViewSet(viewsets.ModelViewSet):
     queryset = Gathering.objects.all()
+    #queryset = Gathering.objects.filter(is_start=False)
     serializer_class = GatheringSerializer
     #permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
     def perform_create(self, serializer):

@@ -63,7 +63,7 @@ INSTALLED_APPS = [
 
 
 REST_FRAMEWORK = {
-    'DATETIME_FORMAT': "%m/%d/%y %H:%M",
+    'DATETIME_FORMAT': "%Y-%m-%d %H:%M",
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.BasicAuthentication',
