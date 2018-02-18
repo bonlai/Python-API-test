@@ -82,7 +82,7 @@ class GatheringViewSet(viewsets.ModelViewSet):
     serializer_class = GatheringSerializer
     pagination_class = LargeResultsSetPagination
     filter_backends = (SearchFilter,)
-    search_fields = ('name','details')
+    search_fields = ('name','details','restaurant__address')
     #permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
     def perform_create(self, serializer):
         # Include the owner attribute directly, rather than from request data.
@@ -129,6 +129,9 @@ class ParticipateViewSet(viewsets.ModelViewSet):
 class RestaurantViewSet(viewsets.ModelViewSet):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
+    pagination_class = LargeResultsSetPagination
+    filter_backends = (SearchFilter,)
+    search_fields = ('address','category','name',)
 
 class InterestViewSet(viewsets.ModelViewSet):
     queryset = Interest.objects.all()
