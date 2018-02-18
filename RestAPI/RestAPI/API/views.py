@@ -22,6 +22,7 @@ from rest_framework.exceptions import APIException
 from django.db.models import Q
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.filters import SearchFilter
+from rest_framework.filters import OrderingFilter
 
 class ListUser(generics.ListAPIView):
     queryset = User.objects.all()
@@ -130,7 +131,9 @@ class RestaurantViewSet(viewsets.ModelViewSet):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
     pagination_class = LargeResultsSetPagination
-    filter_backends = (SearchFilter,)
+    filter_backends = (filters.DjangoFilterBackend,SearchFilter, OrderingFilter)
+    filter_fields = ('average_rate',)
+    ordering_fields = ('average_rate', 'review_count')
     search_fields = ('address','category','name',)
 
 class InterestViewSet(viewsets.ModelViewSet):
