@@ -10,7 +10,7 @@ from rest_framework.decorators import detail_route, list_route
 from rest_framework.response import Response
 
 from rest_framework import generics
-from django_filters.rest_framework import DjangoFilterBackend
+#from django_filters.rest_framework import DjangoFilterBackend
 #from rest_framework import filters
 from django_filters import rest_framework as filters
 
@@ -20,12 +20,15 @@ from .permissions import IsOwnerOrReadOnly
 from django.core.exceptions import ValidationError
 from rest_framework.exceptions import APIException
 from django.db.models import Q
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.filters import SearchFilter
 
 class ListUser(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    filter_backends = (DjangoFilterBackend,)
-    filter_fields = ('id', 'username')
+    filter_backends = (filters.DjangoFilterBackend,SearchFilter)
+    filter_fields = ('id',)
+    search_fields = ('username',)
     #filter_fields = ('first_name',)
 
 class UserFilter(filters.FilterSet):
@@ -68,10 +71,18 @@ class AppUserViewSet(viewsets.ModelViewSet):
         serializer = AppUserSerializer(appUser,context=serializer_context)
         return Response(serializer.data)
 '''
+class LargeResultsSetPagination(PageNumberPagination):
+    page_size = 3
+    def get_paginated_response(self, data):
+        return Response(data)
+
 class GatheringViewSet(viewsets.ModelViewSet):
     queryset = Gathering.objects.all()
     #queryset = Gathering.objects.filter(is_start=False)
     serializer_class = GatheringSerializer
+    pagination_class = LargeResultsSetPagination
+    filter_backends = (SearchFilter,)
+    search_fields = ('name','details')
     #permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
     def perform_create(self, serializer):
         # Include the owner attribute directly, rather than from request data.
