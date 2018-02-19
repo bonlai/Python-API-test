@@ -33,7 +33,7 @@ class Profile(models.Model):
         db_table = "profile"
 
 class Interest(models.Model):
-    name = models.CharField(max_length=10)
+    name = models.CharField(max_length=30)
     user=models.ManyToManyField(User,related_name ='enjoy')
     class Meta:
         db_table = "interest"

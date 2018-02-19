@@ -23,6 +23,8 @@ from django.db.models import Q
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.filters import SearchFilter
 from rest_framework.filters import OrderingFilter
+from rest_framework import mixins
+from rest_framework import status
 
 class ListUser(generics.ListAPIView):
     queryset = User.objects.all()
@@ -150,6 +152,21 @@ class InterestViewSet(viewsets.ModelViewSet):
         except Interest.DoesNotExist:           
             instance = serializer.save()    
             instance.user.add(self.request.user)
+
+class UserInterestList(generics.ListAPIView):
+    model = Interest
+    queryset = Interest.objects.all()
+    serializer_class = InterestSerializer
+
+    def get_queryset(self):
+        id = self.kwargs['userid']
+        return Interest.objects.filter(user__id=id)#user__id=id,      
+    
+    def delete(self, request, *args, **kwargs):
+        userId=self.kwargs['userid']
+        user=User.objects.get(id=userId)
+        user.enjoy.clear()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 class ReviewViewSet(viewsets.ModelViewSet):
     queryset = Review.objects.all()
