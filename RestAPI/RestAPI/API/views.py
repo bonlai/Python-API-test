@@ -85,10 +85,11 @@ class GatheringFilter(filters.FilterSet):
     end_date = filters.DateTimeFilter(name="start_datetime", lookup_expr='lte')
     count_greater = filters.NumberFilter(name="member_count", lookup_expr='gte')
     count_less = filters.NumberFilter(name="member_count", lookup_expr='lte')
+    location = filters.CharFilter(name="restaurant__address",lookup_expr='icontains')
 
     class Meta:
         model = Gathering
-        fields = ['start_date']
+        fields = ['location','start_date']
 
 class GatheringViewSet(viewsets.ModelViewSet):
     queryset = Gathering.objects.annotate(member_count=Count('member')).all()
@@ -97,7 +98,7 @@ class GatheringViewSet(viewsets.ModelViewSet):
     pagination_class = LargeResultsSetPagination
     filter_backends = (filters.DjangoFilterBackend,SearchFilter,)
     filter_class = GatheringFilter
-    search_fields = ('name','details','restaurant__address')
+    search_fields = ('name','details')
     #permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
     def perform_create(self, serializer):
         # Include the owner attribute directly, rather than from request data.
