@@ -25,6 +25,7 @@ from rest_framework.filters import SearchFilter
 from rest_framework.filters import OrderingFilter
 from rest_framework import mixins
 from rest_framework import status
+from django.db.models import Count
 
 class ListUser(generics.ListAPIView):
     queryset = User.objects.all()
@@ -78,13 +79,24 @@ class LargeResultsSetPagination(PageNumberPagination):
     page_size = 3
     def get_paginated_response(self, data):
         return Response(data)
+    
+class GatheringFilter(filters.FilterSet):
+    start_date = filters.DateTimeFilter(name="start_datetime", lookup_expr='gte')
+    end_date = filters.DateTimeFilter(name="start_datetime", lookup_expr='lte')
+    count_greater = filters.NumberFilter(name="member_count", lookup_expr='gte')
+    count_less = filters.NumberFilter(name="member_count", lookup_expr='lte')
+
+    class Meta:
+        model = Gathering
+        fields = ['start_date']
 
 class GatheringViewSet(viewsets.ModelViewSet):
-    queryset = Gathering.objects.all()
+    queryset = Gathering.objects.annotate(member_count=Count('member')).all()
     #queryset = Gathering.objects.filter(is_start=False)
     serializer_class = GatheringSerializer
     pagination_class = LargeResultsSetPagination
-    filter_backends = (SearchFilter,)
+    filter_backends = (filters.DjangoFilterBackend,SearchFilter,)
+    filter_class = GatheringFilter
     search_fields = ('name','details','restaurant__address')
     #permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
     def perform_create(self, serializer):
