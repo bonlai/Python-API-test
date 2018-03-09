@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 from .models import *
 from rest_framework.validators import UniqueTogetherValidator
+from API.recommendation import *
 
 class ProfilePicSerializer(serializers.HyperlinkedModelSerializer):
     image=serializers.ImageField(max_length=None,use_url=True)
@@ -50,12 +51,29 @@ class ParticipateSerializer(serializers.ModelSerializer):
         model = Participate
         fields = ('id','user','gathering')
 
+class RateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RecommendedRate
+        fields = ('rating',)
+
 class GatheringSerializer(serializers.ModelSerializer):
     user = serializers.PrimaryKeyRelatedField(read_only=True) 
+
+    #recommend=RateSerializer(many=True, read_only=True)
     class Meta:
         model = Gathering
         #fields = '__all__'
         fields = ('id','name','details','start_datetime','is_start','user','restaurant','member')
+    '''def get_recommended_rate(self, obj):
+        requestuser =  self.context['request'].user
+        requestrestaurant=obj.restaurant
+        s=SlopeOne()
+        print(requestuser.id)
+       # if(Review.objects.get(user=requestuser,restaurant=requestrestaurant))
+        value=s.predict(requestuser.id,requestrestaurant.id)     
+        c=RecommendedRate(restaurant=requestrestaurant,user=requestuser,rating=value)
+        c.save()
+        return value'''
 
 class RestaurantLocationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

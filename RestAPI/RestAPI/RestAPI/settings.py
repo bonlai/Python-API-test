@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.twitter',
     'django_filters',
+    'django_extensions',
 ]
 
 #restrict number of items in one json

@@ -92,14 +92,34 @@ class GatheringFilter(filters.FilterSet):
         fields = ['location','start_date']
 
 class GatheringViewSet(viewsets.ModelViewSet):
-    queryset = Gathering.objects.annotate(member_count=Count('member')).all()
-    #queryset = Gathering.objects.filter(is_start=False)
+    #queryset = Gathering.objects.annotate(member_count=Count('member')).all()
     serializer_class = GatheringSerializer
     pagination_class = LargeResultsSetPagination
-    filter_backends = (filters.DjangoFilterBackend,SearchFilter,)
+    filter_backends = (filters.DjangoFilterBackend,SearchFilter,OrderingFilter)
+    ordering_fields = ('recommended_rate',)
     filter_class = GatheringFilter
     search_fields = ('name','details')
     #permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
+    def get_queryset(self):
+        for gathering in Gathering.objects.all():
+            requestRestaurant=gathering.restaurant
+            requestUser=self.request.user
+            if not RecommendedRate.objects.filter(gathering=gathering,restaurant=requestRestaurant,
+                                                  user=requestUser).exists():
+                s=SlopeOne()
+                value=s.predict(requestUser.id,requestRestaurant.id)     
+                c=RecommendedRate(gathering=gathering,restaurant=requestRestaurant,user=requestUser,rating=value)
+                c.save()
+
+        requestUser=self.request.user
+        rr=requestUser.recommendedrate_set.all().order_by('-rating')
+        mkey=list(rr.values_list('gathering_id',flat=True))
+        clauses = ' '.join(['WHEN id=%s THEN %s' % (pk, i) for i, pk in enumerate(mkey)])
+        ordering = 'CASE %s END' % clauses
+        queryset = Gathering.objects.filter(pk__in=mkey).extra(
+                   select={'ordering': ordering}, order_by=('ordering',))
+        return queryset
+
     def perform_create(self, serializer):
         # Include the owner attribute directly, rather than from request data.
         instance = serializer.save(user=self.request.user)

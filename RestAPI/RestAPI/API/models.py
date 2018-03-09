@@ -84,6 +84,14 @@ class Review(models.Model):
     class Meta:
         db_table = "review"
 
+class RecommendedRate(models.Model):   
+    user = models.ForeignKey(User)
+    restaurant=models.ForeignKey(Restaurant)
+    gathering=models.ForeignKey(Gathering,related_name='recommend', on_delete=models.CASCADE)
+    rating = models.FloatField()
+    class Meta:
+        db_table = "recommendedRate"
+
 class RestaurantImage(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     image=models.ImageField(upload_to='RestaurantImage/', default='Images/None/No-img.jpg')

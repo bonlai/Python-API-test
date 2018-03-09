@@ -21,7 +21,7 @@ from rest_framework.authtoken import views
 # admin.autodiscover()
 
 router = DefaultRouter()
-router.register(r'gathering', GatheringViewSet)
+router.register(r'gathering', GatheringViewSet,'gathering')
 router.register(r'restaurantImage', RestaurantImageViewSet)
 router.register(r'participate', ParticipateViewSet)
 router.register(r'restaurant', RestaurantViewSet)
