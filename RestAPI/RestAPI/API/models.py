@@ -29,6 +29,7 @@ class Profile(models.Model):
     gender = models.CharField(choices=GENDER_CHOICES, max_length=6)
     self_introduction = models.TextField(blank=True)
     image=models.ImageField(upload_to='ProfilePic/', default='ProfilePic/default.png',blank=True,null=True)
+    cluster = models.CharField(max_length=1,blank=True,null=True)
     class Meta:
         db_table = "profile"
 
