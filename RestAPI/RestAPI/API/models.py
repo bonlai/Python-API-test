@@ -87,9 +87,9 @@ class Review(models.Model):
 
 class RecommendedRate(models.Model):   
     user = models.ForeignKey(User)
-    restaurant=models.ForeignKey(Restaurant)
     gathering=models.ForeignKey(Gathering,related_name='recommend', on_delete=models.CASCADE)
-    rating = models.FloatField()
+    restaurant_rate = models.FloatField(default=0)
+    cluster_rate= models.IntegerField(default=0)
     class Meta:
         db_table = "recommendedRate"
 

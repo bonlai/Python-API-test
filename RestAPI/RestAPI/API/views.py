@@ -101,18 +101,29 @@ class GatheringViewSet(viewsets.ModelViewSet):
     search_fields = ('name','details')
     #permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
     def get_queryset(self):
+        requestUser=self.request.user
         for gathering in Gathering.objects.all():
             requestRestaurant=gathering.restaurant
-            requestUser=self.request.user
-            if not RecommendedRate.objects.filter(gathering=gathering,restaurant=requestRestaurant,
-                                                  user=requestUser).exists():
-                s=SlopeOne()
-                value=s.predict(requestUser.id,requestRestaurant.id)     
-                c=RecommendedRate(gathering=gathering,restaurant=requestRestaurant,user=requestUser,rating=value)
-                c.save()
 
-        requestUser=self.request.user
-        rr=requestUser.recommendedrate_set.all().order_by('-rating')
+            returnRate=lambda myProfile,otherProfile: 1 if myProfile.cluster==otherProfile.cluster else -1
+
+            clusterRate=0
+            for member in gathering.member.exclude(id=requestUser.id):
+                clusterRate+=returnRate(requestUser.profile,member.profile)
+
+            clusterRate+=returnRate(requestUser.profile,gathering.user.profile)
+            clusterRate=clusterRate/(len(gathering.member.exclude(id=requestUser.id))+1)
+            print(clusterRate)
+
+            s=SlopeOne()
+            value=s.predict(requestUser.id,requestRestaurant.id) 
+            
+            obj, created = RecommendedRate.objects.update_or_create(
+                gathering=gathering, user=requestUser,
+                defaults={'cluster_rate': clusterRate,'restaurant_rate':value}
+            )
+
+        rr=requestUser.recommendedrate_set.all().order_by('-restaurant_rate', '-cluster_rate')
         mkey=list(rr.values_list('gathering_id',flat=True))
         clauses = ' '.join(['WHEN id=%s THEN %s' % (pk, i) for i, pk in enumerate(mkey)])
         ordering = 'CASE %s END' % clauses
