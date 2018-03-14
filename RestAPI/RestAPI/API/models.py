@@ -8,13 +8,6 @@ from django.db.models.signals import post_save
 from django.contrib.auth.models import User
 #from django.conf import settings
 
-class ProfilePic(models.Model):
-    created = models.DateTimeField(auto_now_add=True)
-    image=models.ImageField(upload_to='ProfilePic/', default='ProfilePic/default.png')
-    user = models.OneToOneField(User, on_delete=models.CASCADE,primary_key=True)
-    class Meta:
-        db_table = "profilePic"
-
 GENDER_CHOICES = (
     ('Male', 'Male'),
     ('Female', 'Female'),
@@ -30,6 +23,8 @@ class Profile(models.Model):
     self_introduction = models.TextField(blank=True)
     image=models.ImageField(upload_to='ProfilePic/', default='ProfilePic/default.png',blank=True,null=True)
     cluster = models.CharField(max_length=1,blank=True,null=True)
+    latitude=models.FloatField(default=None,null=True)
+    longitude=models.FloatField(default=None,null=True)
     class Meta:
         db_table = "profile"
 
@@ -90,6 +85,7 @@ class RecommendedRate(models.Model):
     gathering=models.ForeignKey(Gathering,related_name='recommend', on_delete=models.CASCADE)
     restaurant_rate = models.FloatField(default=0)
     cluster_rate= models.IntegerField(default=0)
+    distance_rate= models.IntegerField(default=0)
     class Meta:
         db_table = "recommendedRate"
 

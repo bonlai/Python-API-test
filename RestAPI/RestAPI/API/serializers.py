@@ -26,7 +26,6 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
     @receiver(post_save, sender=User)
     def save_user_profile(sender, instance, **kwargs):
         instance.profile.save()
-        instance.profilepic.save()
 
 class UserSerializer(serializers.ModelSerializer):
     profile = ProfileSerializer()
@@ -103,4 +102,8 @@ class ReviewSerializer(serializers.ModelSerializer):
         model = Review
         fields = ('id','user','comment','rating','restaurant')
 
-      
+
+class LatLongSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        fields = ('latitude','longitude')      

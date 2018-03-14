@@ -123,7 +123,7 @@ class GatheringViewSet(viewsets.ModelViewSet):
                 defaults={'cluster_rate': clusterRate,'restaurant_rate':value}
             )
 
-        rr=requestUser.recommendedrate_set.all().order_by('-restaurant_rate', '-cluster_rate')
+        rr=requestUser.recommendedrate_set.all().order_by('-restaurant_rate', '-cluster_rate','distance_rate')
         mkey=list(rr.values_list('gathering_id',flat=True))
         clauses = ' '.join(['WHEN id=%s THEN %s' % (pk, i) for i, pk in enumerate(mkey)])
         ordering = 'CASE %s END' % clauses
@@ -229,6 +229,10 @@ class ReviewViewSet(viewsets.ModelViewSet):
 
         restaurant.save()
         instance = serializer.save(user=self.request.user)
+
+class LatLongView(generics.UpdateAPIView):
+    queryset = Profile.objects.all()
+    serializer_class = LatLongSerializer
 
 from allauth.socialaccount.providers.facebook.views import FacebookOAuth2Adapter
 from rest_auth.registration.views import SocialLoginView

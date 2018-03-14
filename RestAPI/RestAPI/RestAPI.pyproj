@@ -42,6 +42,9 @@
     <Compile Include="API\recommendation.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="API\tasks.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="API\tests.py" />
     <Compile Include="API\views.py" />
     <Compile Include="API\__init__.py" />

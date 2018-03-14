@@ -41,6 +41,7 @@ urlpatterns = [
     url(r'^api/user/(?P<pk>[0-9]+)/profile/profile_pic_udate/$', ProfilePicUpdate.as_view()),
     url(r'^api/user/(?P<userid>[0-9]+)/gathering/$', UserGatheringList.as_view()),
     url(r'^api/user/(?P<userid>[0-9]+)/interest/$', UserInterestList.as_view()),
+    url(r'^api/user/(?P<pk>[0-9]+)/lat_long/$', LatLongView.as_view()),
 #    url(r'^api/gathering/location/$', GatheringLocationList.as_view()),
     #url(r'^api/user/(?P<userid>[0-9]+)/review/$', UserGatheringList.as_view()),
     #url(r'^api/user/(?P<userid>[0-9]+)/interest/$', UserGatheringList.as_view()),
