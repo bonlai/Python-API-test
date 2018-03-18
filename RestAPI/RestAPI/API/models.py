@@ -60,7 +60,7 @@ class Restaurant(models.Model):
     name = models.CharField(max_length=100)
     #phone = models.CharField(max_length=20, null=True)
     address = models.TextField()
-    category = models.CharField(max_length=30)
+    category = models.CharField(max_length=100)
     #created = models.DateTimeField(auto_now_add=True)
     average_rate=models.FloatField(default=0)
     review_count=models.IntegerField(default=0)

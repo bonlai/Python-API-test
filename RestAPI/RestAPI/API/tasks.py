@@ -24,5 +24,20 @@ def calDistanceRate():
                         defaults={'distance_rate': distance_rate}
                     )
 
+@background(schedule=1)
+def slopeOneCal():
+    s=SlopeOne()
+    for requestUser in User.objects.all():
+        for gathering in Gathering.objects.all():
+            requestRestaurant=gathering.restaurant
+
+            value=s.predict(requestUser.id,requestRestaurant.id) 
+            
+            obj, created = RecommendedRate.objects.update_or_create(
+                    gathering=gathering, user=requestUser,
+                    defaults={'restaurant_rate':value}
+            )
+
 calDistanceRate(repeat=60)
 autoClustering(repeat=43200)
+slopeOneCal(repeat=60)

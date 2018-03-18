@@ -76,7 +76,7 @@ class AppUserViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 '''
 class LargeResultsSetPagination(PageNumberPagination):
-    page_size = 3
+    page_size = 10
     def get_paginated_response(self, data):
         return Response(data)
     
@@ -103,7 +103,6 @@ class GatheringViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         requestUser=self.request.user
         for gathering in Gathering.objects.all():
-            requestRestaurant=gathering.restaurant
 
             returnRate=lambda myProfile,otherProfile: 1 if myProfile.cluster==otherProfile.cluster else -1
 
@@ -113,14 +112,11 @@ class GatheringViewSet(viewsets.ModelViewSet):
 
             clusterRate+=returnRate(requestUser.profile,gathering.user.profile)
             clusterRate=clusterRate/(len(gathering.member.exclude(id=requestUser.id))+1)
-            print(clusterRate)
-
-            s=SlopeOne()
-            value=s.predict(requestUser.id,requestRestaurant.id) 
+            #print(clusterRate)
             
             obj, created = RecommendedRate.objects.update_or_create(
                 gathering=gathering, user=requestUser,
-                defaults={'cluster_rate': clusterRate,'restaurant_rate':value}
+                defaults={'cluster_rate': clusterRate}
             )
 
         rr=requestUser.recommendedrate_set.all().order_by('-restaurant_rate', '-cluster_rate','distance_rate')
