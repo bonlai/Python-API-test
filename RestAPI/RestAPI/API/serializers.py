@@ -42,7 +42,8 @@ class RestaurantSerializer(serializers.HyperlinkedModelSerializer):
     image = RestaurantImageSerializer(many=True, read_only=True)
     class Meta:
         model = Restaurant
-        fields = ('id','name','image','address','category','average_rate','review_count')
+        fields = ('id','name','image','address','category','average_rate','review_count'
+                  ,'phone','price_range')
 
 class ParticipateSerializer(serializers.ModelSerializer):
     user = serializers.PrimaryKeyRelatedField(read_only=True) 
