@@ -6,8 +6,9 @@ from time import sleep
 import re
 import argparse
 import codecs
+import shutil
 
-id=19
+id=8
 
 def parse(url):
 	headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36'}
@@ -19,6 +20,7 @@ def parse(url):
 	listing = parser.xpath("//li[@class='regular-search-result']")
 	total_results = parser.xpath("//span[@class='pagination-results-window']//text()")
 	scraped_datas=[]
+	scraped_datas_img=[]
 	global id
 	for results in listing:
 		raw_position = results.xpath(".//span[@class='indexed-biz-name']/text()")	
@@ -32,6 +34,15 @@ def parse(url):
 		is_accept_pickup = results.xpath(".//span[contains(@class,'order')]")
 		url = "https://www.yelp.com"+results.xpath(".//span[@class='indexed-biz-name']/a/@href")[0]
 
+		img_url = results.xpath(".//div[@class='photo-box pb-90s']//img/@src")[0].replace('90s','o')
+		phone = results.xpath(".//span[@class='biz-phone']/text()")[0].strip()
+		img_r = requests.get(img_url, stream=True)
+		if img_r.status_code == 200:
+			with open('F:/Python-API-test/RestAPI/RestAPI/media/RestaurantImage/%s.jpg'%(id), 'wb') as f:
+				img_r.raw.decode_content = True
+				shutil.copyfileobj(img_r.raw, f)
+				
+		#RestaurantImage/%s.jpg''%(id)
 		name = ''.join(raw_name).strip()
 		position = ''.join(raw_position).replace('.','')
 		cleaned_reviews = ''.join(raw_review_count).strip()
@@ -53,12 +64,21 @@ def parse(url):
 				'address':address,
 				'categories':categories,
 				'average_rate':zero,
-				'review_count':zero
+				'review_count':zero,
+				'phone':phone,
+				'price_range':price_range
+		}
+		
+		img_data={
+				'id':id,
+				'image':'RestaurantImage/%s.jpg'%(id),
+				'restaurant_id':id
 		}
 		id+= 1
 		if(address!=''):
 			scraped_datas.append(data)
-	return scraped_datas
+			scraped_datas_img.append(img_data)
+	return scraped_datas,scraped_datas_img
 
 if __name__=="__main__":
 	argparser = argparse.ArgumentParser()
@@ -74,15 +94,25 @@ if __name__=="__main__":
 	place = args.place
 	search_query = args.search_query
 	scraped_data= []
+	scraped_data_img=[]
 
-	for start in range(1, 20):
+	for start in range(0, 20):
 		yelp_url  = "https://www.yelp.com/search?find_desc=%s&find_loc=%s&start=%s"%(search_query,place,start*10)
 		print ("Retrieving :",yelp_url)
-		scraped_data += parse(yelp_url)
+		temp_data,temp_data_img=parse(yelp_url)
+		scraped_data += temp_data
+		scraped_data_img+=temp_data_img
 	print ("Writing data to output file")
 	with open("scraped_yelp_results_for_%s.csv"%(place),"w",encoding='utf_8_sig') as fp:
-		fieldnames= ['id','business_name','address','categories','average_rate','review_count']
+		fieldnames= ['id','business_name','address','categories','average_rate','review_count','phone','price_range']
 		writer = csv.DictWriter(fp,fieldnames=fieldnames)
 		writer.writeheader()
 		for data in scraped_data:
+			writer.writerow(data)
+
+	with open("scraped_img_yelp_results_for_%s.csv"%(place),"w",encoding='utf_8_sig') as fp:
+		fieldnames= ['id','image','restaurant_id']
+		writer = csv.DictWriter(fp,fieldnames=fieldnames)
+		writer.writeheader()
+		for data in scraped_data_img:
 			writer.writerow(data)

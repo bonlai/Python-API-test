@@ -58,12 +58,12 @@ class Participate(models.Model):
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=100)
-    #phone = models.CharField(max_length=20, null=True)
     address = models.TextField()
     category = models.CharField(max_length=100)
-    #created = models.DateTimeField(auto_now_add=True)
     average_rate=models.FloatField(default=0)
     review_count=models.IntegerField(default=0)
+    price_range=models.IntegerField(default=0)
+    phone = models.CharField(max_length=20, null=True)
     #image=models.ForeignKey('images');
     def __str__(self):
        return self.name
@@ -90,7 +90,6 @@ class RecommendedRate(models.Model):
         db_table = "recommendedRate"
 
 class RestaurantImage(models.Model):
-    created = models.DateTimeField(auto_now_add=True)
     image=models.ImageField(upload_to='RestaurantImage/', default='Images/None/No-img.jpg')
     restaurant=models.ForeignKey(Restaurant, on_delete=models.CASCADE,related_name='image')
     class Meta:

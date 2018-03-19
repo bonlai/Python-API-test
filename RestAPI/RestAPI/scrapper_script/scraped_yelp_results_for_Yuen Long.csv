@@ -1,170 +1,173 @@
-﻿id,business_name,address,categories,average_rate,review_count
-19,「老地方」肉餅專門店,Ping Shan 屏山蝦尾村 Hong Kong,Hong Kong Style Cafe,0,0
-20,Urban United Burger & Bar,"Shop 8-9, G/F, Full Yau Court, 37-51 Yau San Street 又新街37-51號富祐閣地下8-9號舖 Hong Kong","American (Traditional),Burgers,Bars",0,0
-21,紅屋仔 芳記,"6 Palm Springs Boulevard, Mai Po 米埔加州大道6號 Hong Kong",Cantonese,0,0
-22,Happy Seafood Restaurant,12 Shan Tung Street 山東街12號 Hong Kong,"Seafood,Cantonese,Dim Sum",0,0
-23,Hai Nam Chicken Takeaway Shop,"Shop A150, G/F, Kingswood Richly Plaza, 1 Tin Wu Road 天湖路1號新北江商場地下A150號舖 Hong Kong",Thai,0,0
-24,Cafe de Coral,"Shop G01, G/F, Phase 2, Fortune Kingswood, 12-18 Tin Yan Road 天恩路12-18號置富嘉湖二期地下G01號舖 Hong Kong","Fast Food,Hong Kong Style Cafe",0,0
-25,旺泰泰國菜,"Shop 19B, Hing Fook Building, Fuk Lok Path 褔樂徑幸福樓19B號鋪 Hong Kong",Thai,0,0
-26,Omerice,119 Kau Yuk Road 元朗教育路119號 Hong Kong,"Japanese,Asian Fusion",0,0
-27,Shaffi’s India Restaurant,"7, G/F, Wang Fung Building, 2 Fau Tsoi Street 阜財街2號宏豐大廈G/F, 7 Hong Kong",Indian,0,0
-28,寿司の神,"Shop 7, G/F, On Ning Building, 20-30B Ma Tin Road 馬田路20-30B號安寧大廈地下7號鋪 Hong Kong","Sushi Bars,Japanese",0,0
-29,潮豐潮州牛肉店,"C, G/F, Kam On Building, 2 Kam Fai Path 金輝徑2號金安閣G/F, C Hong Kong",Food Stands,0,0
-30,King Ludwig Beerhall,Castle Peak Road (Hung Shui Kiu) 元朗青山公路洪水橋段 Hong Kong,German,0,0
-31,迎囍宴會廳,"3/F, Long Ping Commercial Complex, 1 Long Ping Road 朗屏路1號朗屏商場3樓 Hong Kong","Desserts,Hong Kong Style Cafe",0,0
-32,New Shun Hing Chiushan Salty Food Shop,"Shop 9, G/F, 7-25 Yau San Street 又新街7-25號地下9號舖 Hong Kong","Barbeque,Teochew",0,0
-33,Ho To Tai Noodle Shop,"G/F, 67 Fau Tsoi Street 阜財街67號地下 Hong Kong",Noodles,0,0
-34,Homey Cafe,"Shop 15-16, Manhattan Plaza, 23 Sai Ching Street 西菁街23號富達廣場15-16號舖 Hong Kong",American (Traditional),0,0
-36,Crazy Eats,"Stall Nos 20 & 21, G/F Blk A, Town CTR, Fariview Park 錦繡花園地下A座市中心20-21號 Hong Kong","Dim Sum,Hong Kong Style Cafe,Waffles",0,0
-37,Moon Kee Wanton Noodle,"G/F, 113A On Ning Road 安寧路113A號地下 Hong Kong","Cantonese,Congee,Noodles",0,0
-38,119 Korea Station,"G/F, Full Shing Building, 9 Sai Ching Street 西菁街9號富盛大廈地下 Hong Kong",Korean,0,0
-39,Homey Cafe,"Shop 15-16, Manhattan Plaza, 23 Sai Ching Street 西菁街23號富達廣場15-16號舖 Hong Kong",American (Traditional),0,0
-40,Moon Kee Wanton Noodle,"G/F, 113A On Ning Road 安寧路113A號地下 Hong Kong","Cantonese,Congee,Noodles",0,0
-41,樂園茶餐廳,錦田公路103號 Hong Kong,Hong Kong Style Cafe,0,0
-43,Plentiful Delight Banquet,"1/F, Ho Shun Tai Building, 10 Sai Ching Street 西菁街10號好順泰大廈1樓 Hong Kong","Cantonese,Dim Sum",0,0
-44,Riviera Restaurant,"Shop 66, G/F, Yee Fung Garden, 38 Ma Tin Road 馬田路38號怡豐花園地下66號鋪 Hong Kong","Breakfast & Brunch,Italian",0,0
-45,McDonald’s,"Shop G5-G7, G/F, Grandeur Terrace Shopping Centre, 88 Tin Shui Road 天瑞路88號俊宏軒地下G5-G7號舖 Hong Kong","Fast Food,Burgers",0,0
-46,Ho Lee Fook,"G/F, 1-5 Elgin Street 伊利近街1-5號地下 Hong Kong","Asian Fusion,Cantonese",0,0
-47,Modern Shanghai,"Shop 1058, F/1, 9 Yuen Lung Street 元龍街9號1樓1058號舖 Hong Kong",Shanghainese,0,0
-48,京滬村,"Shop 2, 1/F, Block 1, Ho Shun Lee Building, 9 Fung Yau Street South 鳳攸南街9號好順利大廈1座1樓2號舖 Hong Kong",Pekinese,0,0
-49,Ho Lee Fook,"G/F, 1-5 Elgin Street 伊利近街1-5號地下 Hong Kong","Asian Fusion,Cantonese",0,0
-50,Eggplant Thai Viet Cuisine,"Shop 10, G/F, Ho Shun King Building Blk 2, 3 Fung Yau Street South 鳳攸南街3號好順景大廈2座地下10號舖 Hong Kong","Thai,Vietnamese",0,0
-51,韓之美食,"Shop No. 7, G/F, On Fai Building, 30-40B Yuen Long On Hing Street 元朗安興街30-40號B安輝樓地下7號舖 Hong Kong",Korean,0,0
-52,京滬村,"Shop 2, 1/F, Block 1, Ho Shun Lee Building, 9 Fung Yau Street South 鳳攸南街9號好順利大廈1座1樓2號舖 Hong Kong",Pekinese,0,0
-53,Modern Shanghai,"Shop 1058, F/1, 9 Yuen Lung Street 元龍街9號1樓1058號舖 Hong Kong",Shanghainese,0,0
-54,Din Tai Fung,"Shop 306, 3/F, Silvercord, 30 Canton Road 廣東道30號新港中心3樓306舖 Hong Kong","Taiwanese,Shanghainese,Dim Sum",0,0
-55,Ka Lai Yuen Chiu Chow Restaurant,"G/F, Li King House, 5 Hong King Street 康景街利景樓5號地下 Hong Kong","Congee,Teochew",0,0
-56,Achacha Cafe & Bistro,"Shop K&L, G/F, Shun Fat Building, 54-56 Kau Yuk Road 教育路54-56號順發大樓地下K&L號舖 Hong Kong","Breakfast & Brunch,Burgers,British",0,0
-57,Ichiran,"Shop F - G, G/F, Lockhart House Block A, 440-446 Jaffe Road 謝斐道440-446號駱克大樓A座地下F-G 舖 Hong Kong",Ramen,0,0
-58,Kau Kee Restaurant,"G/F, 21 Gough Street 歌賦街21號地下 Hong Kong","Cantonese,Noodles",0,0
-59,天奴豬扒餐廳,"Yuen Tung Building, 18 Cheong Shing Path, Yuen Long",Diners,0,0
-60,Anna Restaurant,"Lee Fat House, 5 Yan Lok Square, Yuen Long",Steakhouses,0,0
-61,Washington Fast Food Shop,"7 Ma Wang Road, Yuen Long","Fast Food,Burgers,Fish & Chips",0,0
-62,Cheung Hing Kee Shanghai Pan-fried Buns,"48 Lock Road, Tsim Sha Tsui",Shanghainese,0,0
-63,真膳美,"Kingswood Richly Plaza, 1 Tin Wu Road, Tin Shui Wai",Diners,0,0
-64,One Dim Sum,"Kenwood Mansion, 15 Playing Field Road, Prince Edward","Cantonese,Dim Sum",0,0
-65,Australia Dairy Company,"47-49 Parkes Street, Jordan","Hong Kong Style Cafe,Desserts,Coffee & Tea",0,0
-66,Tim Ho Wan,"9-11 Fuk Wing Street, Sham Shui Po","Cantonese,Dim Sum",0,0
-67,Mak Man Kee Noodle Shop,"Royal Commercial Centre, 51 Parkes Street, Jordan","Congee,Cantonese,Noodles",0,0
-68,Butao Ramen,"Chun Wah Commercial Building, 28-30 Minden Avenue, Tsim Sha Tsui",Ramen,0,0
-69,金輝士多,174 Kam Sheung Road 錦上路石湖塘村174號 Hong Kong,"Sandwiches,Convenience Stores",0,0
-70,聯發燒鵝,"Shop 4, G/F, Foo Choi House, 47 Fau Tsoi Street 阜財街47號富財樓地下4號舖 Hong Kong","Barbeque,Cantonese",0,0
-71,Din Tai Fung,"Shop 3-11, G/F, 68 Yee Wo Street 怡和街68號地下3-11舖 Hong Kong","Shanghainese,Taiwanese,Dim Sum",0,0
-74,學記麵家,"Shop 1, G/F, Cooked Food Centre, Kik Yeung Road 擊壤路熟食市場地下1號鋪 Hong Kong",Hong Kong Style Cafe,0,0
-75,Sawadee Thai Restaurant,"G/F-1/F, 1 Yuen Long Tung Shing Lei Road 元朗東成里路1號G/F-1/F Hong Kong",Thai,0,0
-76,將太日本料理,Kin Yip Street 元朗建業街27號地下 Hong Kong,Japanese,0,0
-77,Fairview Park Country Club,Lotus Road 紅荷路 Hong Kong,"Dim Sum,Asian Fusion,Sports Clubs",0,0
-78,Joy Hing Roasted Meat,"C Block, G/F, 265 Hennessy Rd 軒尼詩道265-267號地下C座 Hong Kong","Cantonese,Barbeque",0,0
-80,Chi Kee Congee,11 On Tat Square 安達坊11號 Hong Kong,Congee,0,0
-81,Australia Dairy Company,"G/F, 47-49 Parkes Street 白加士街47-49號地下 Hong Kong","Hong Kong Style Cafe,Desserts,Coffee & Tea",0,0
-82,Tim Ho Wan,"G/F, 9-11 Fuk Wing Street 福榮街9-11號地下 Hong Kong","Cantonese,Dim Sum",0,0
-83,為食街,"G/F, San Kay House, 25-29 Kau Yuk Road 教育路新基樓地下 Hong Kong",Hong Kong Style Cafe,0,0
-85,Joy Hing Roasted Meat,"C Block, G/F, 265 Hennessy Rd 軒尼詩道265-267號地下C座 Hong Kong","Cantonese,Barbeque",0,0
-86,屏山盆菜,"G/F, G/F, Dd 121, Lot 2C, 36 Tong Fong Tsuen, Ping Ha Road, Ping Shan, Yuen Long 元朗屏山屏廈路丈量約份第121約地段第2號C段 塘坊村36號地下G/F Hong Kong",Restaurants,0,0
-87,Fairview Restaurant,"1/F, Fairview Park Country Club, Lotus Road 紅荷路錦綉花園鄉村俱樂部1樓 Hong Kong","Cantonese,Dim Sum",0,0
-88,Sushi Man,"Shop E, Lee Fat House, 5 Yan Lok Square 仁樂坊5號利發大樓E號鋪 Hong Kong","Japanese,Sushi Bars",0,0
-89,McDonald’s,"Shop 003, 005, 006 & 063, G/F, Yuen Long Plaza 元朗廣場地下003, 005, 006及063號舖 Hong Kong","Fast Food,Burgers",0,0
-90,老地方,Ping Shan Heritage Trail 屏山文物徑坑尾村 Hong Kong,Diners,0,0
-91,Oriental Kingdom Restaurant,"1/F, Kai Hei Land Building, 385 Castle Peak Road - Castle Peak Bay 青山公路青山灣段385號嘉喜利大廈1/F Hong Kong",Cantonese,0,0
-92,為食街,"G/F, San Kay House, 25-29 Kau Yuk Road 教育路新基樓地下 Hong Kong",Hong Kong Style Cafe,0,0
-93,Country Cafe,"G/F, Fairview Park Country Club 錦綉花園鄉村俱樂部地下 Hong Kong",Diners,0,0
-94,Mixian Sense,"Shop G02 & G04, G/F, Fortune Kingswood Phase 2, 12-18 Tin Yan Road 天恩路12-18號置富嘉湖二期地下G02及G04號舖 Hong Kong",Szechuan,0,0
-95,AloyMakMak,3-21 Castle Peak Road Yuen Long 青山公路元朗段3-21號 Hong Kong,"Thai,Vietnamese",0,0
-96,Aya,"Shop 14, G/F, Yick Lee Mansion, 26 Kin Tak Street 建德街26號益利大廈地下14號舖 Hong Kong",Ramen,0,0
-97,麗江雲南米線,"1/F, Kingswood Richly Plaza 天湖路1號新北江商場1樓, C45A Hong Kong","Chinese,Delicatessen",0,0
-99,McDonald’s,"Shop 003, 005, 006 & 063, G/F, Yuen Long Plaza 元朗廣場地下003, 005, 006及063號舖 Hong Kong","Fast Food,Burgers",0,0
-100,Butao Ramen,"G/F, Chun Wah Commercial Building, 28-30 Minden Avenue 棉登徑28-30號振華商業大廈地下A,B舖 Hong Kong",Ramen,0,0
-101,Hei Yue Heen,"Fairview Park, Lakeside Path 環湖徑錦綉花園 Hong Kong","Dim Sum,Cantonese",0,0
-103,Tomato Club,54 Kau Yuk Road 教育路54號 Hong Kong,Restaurants,0,0
-104,119 Korea Station,"Shop 95-100, G/F, Full Shing Building, 9 Sai Ching Street 西菁街9號富盛大廈地下95-100號舖 Hong Kong",Korean,0,0
-105,Chow Chow Cafe,"Shop 24, G/F, Ho Shun King Building, 3 Fung Yau Street South 鳳攸南街3號好順景大廈地下24號舖 Hong Kong",Cafes,0,0
-106,AloyMakMak,3-21 Castle Peak Road Yuen Long 青山公路元朗段3-21號 Hong Kong,"Thai,Vietnamese",0,0
-107,生記巴蜀軒山西刀削麵,"46, G/F, Fortune Centre, 17-31 Fung Cheung Road 鳳翔路17-31號鴻運中心G/F, 46 Hong Kong",Szechuan,0,0
-108,Golden Castle Restaurant,"DD114 , Sheung Tsuen , Shek Kong , Pad Heung, Yuen Long 元朗八鄉石崗上村DD114號 Hong Kong","Wine Bars,Seafood,International",0,0
-109,快車茶餐廳,"G/F, 53 Peng Chau Wing On Street 永安街53號地下 Hong Kong",Hong Kong Style Cafe,0,0
-110,強記大排檔,"2/F, Shek Wu Hui Municipal Services Building, 13 Chi Cheong Road 智昌路13號石湖墟市政大廈2樓 Hong Kong",Hong Kong Style Cafe,0,0
-111,Kam’s Roast Goose,"G/F, Po Wah Commercial Centre, 226 Hennessy Road 軒尼詩道226號寶華商業中心地下 Hong Kong","Barbeque,Cantonese",0,0
-113,Sea View Food Shop,"G/F, 105 Argyle Street 亞皆老街105號地下 Hong Kong","Congee,Hong Kong Style Cafe",0,0
-114,Tsim Chai Kee Noodle,"G/F, 98 Wellington Street 威靈頓街98號地下 Hong Kong",Noodles,0,0
-115,King’s Party,"G/F, 26-28 Ha San Wai Road 下新圍路26-28號地下 Hong Kong",Thai,0,0
-116,Chow Chow Cafe,"Shop 24, G/F, Ho Shun King Building, 3 Fung Yau Street South 鳳攸南街3號好順景大廈地下24號舖 Hong Kong",Cafes,0,0
-119,大盛屋日本料理,"Shop 58-59, G/F, Ho Shun Lee Building Block 2, 9 Fung Yau Street South 鳳攸南街9號好順利大廈2座商場地下58-59號鋪 Hong Kong","Japanese,Sushi Bars",0,0
-120,Cafe De Coral,"Shop A, G/F, Block B, Town Centre, Fairview Park 錦繡花園市中心B座地下A號舖 Hong Kong","Fast Food,Hong Kong Style Cafe",0,0
-121,Golden Castle Restaurant,"DD114 , Sheung Tsuen , Shek Kong , Pad Heung, Yuen Long 元朗八鄉石崗上村DD114號 Hong Kong","Wine Bars,Seafood,International",0,0
-122,PizzaExpress,"Shop 1076, 1/F, YOHO Mall, 9 Yuen Lung Street 元龍街9號形點一期1樓1076號舖 Hong Kong",Pizza,0,0
-123,Fu Tung Chinese Market,"Fu Tung Plaza, Tat Tung Road 達東路富東廣場 Hong Kong","Live/Raw Food,Farmers Market",0,0
-125,Crystal Lotus,"Hong Kong Disneyland Hotel, Magic Road 神奇道香港迪士尼樂園酒店 Hong Kong",Cantonese,0,0
-126,天鴻燒鵝,94 Kin Yip Street 建業街94號 Hong Kong,Barbeque,0,0
-127,Little Bao,"G/F, 66 Staunton Street 士丹頓街66號地下 Hong Kong","Burgers,International",0,0
-128,Peony Golden Court,"Shop 4-5, G/F, Ho Shun Tai Building, 10 Sai Ching Street 西菁街10號好順泰大廈地下4-5號 Hong Kong","Dim Sum,Cantonese",0,0
-129,Fu Tung Chinese Market,"Fu Tung Plaza, Tat Tung Road 達東路富東廣場 Hong Kong","Live/Raw Food,Farmers Market",0,0
-130,Tsim Chai Kee Noodle,"G/F, 98 Wellington Street 威靈頓街98號地下 Hong Kong",Noodles,0,0
-132,Sea View Food Shop,"G/F, 105 Argyle Street 亞皆老街105號地下 Hong Kong","Congee,Hong Kong Style Cafe",0,0
-133,V Cuisine,"26, MTR Yuen Long Station 港鐵元朗站26 Hong Kong",Cantonese,0,0
-134,Crystal Lotus,"Hong Kong Disneyland Hotel, Magic Road 神奇道香港迪士尼樂園酒店 Hong Kong",Cantonese,0,0
-135,Cafe De Coral,"Shop A, G/F, Block B, Town Centre, Fairview Park 錦繡花園市中心B座地下A號舖 Hong Kong","Fast Food,Hong Kong Style Cafe",0,0
-136,Sun Hing Restaurant,"Shop C, G/F, 8 Smithfield Road 士美菲路8號地下C號舖 Hong Kong",Dim Sum,0,0
-137,PizzaExpress,"Shop 1076, 1/F, YOHO Mall, 9 Yuen Lung Street 元龍街9號形點一期1樓1076號舖 Hong Kong",Pizza,0,0
-138,大肚腩腸粉,"Shop 14, Ho Sing Building, 28 Kam Fai Path 金輝徑28號好盛洋樓14號舖 Hong Kong",Food Stands,0,0
-139,Mint Thai House,"12 & 13, G/F, Yee Hong Building, 2 On Chun Lane 安駿里2號怡康大廈G/F, 12 & 13 Hong Kong",Thai,0,0
-143,V Cuisine,"26, MTR Yuen Long Station 港鐵元朗站26 Hong Kong",Cantonese,0,0
-144,Hao De Lai Xiao Long Bao Dian,"G/F, 18 Tak Hing Street 德興街18號地下 Hong Kong","Shanghainese,Dim Sum",0,0
-145,Butao Ramen,"18 Sha Tin Centre Street, Sha Tin, New Town Plaza Phase 3 Block 3 Orchid Court, 2-8 Sha Tin Centre Street 正街18號新城市廣場一期1樓167號舖 Hong Kong",Ramen,0,0
-146,Tao Heung Training Restaurant,"G/F, Tao Miao Institute, 13 Au Pui Wan Street 坳背灣街13號稻苗學院G/F Hong Kong","Cantonese,Dim Sum",0,0
-147,Sister Wah,13 Electric Rd 電氣道13號 Hong Kong,"Chinese,Noodles",0,0
-148,Bing Shan Country,"Shop D2, Kingswood Richly Plaza, No.1 Tin Wu Road 天湖路1號嘉湖新北江商場1樓原宿地帶D2號舖 Hong Kong","Hong Kong Style Cafe,Ice Cream & Frozen Yogurt",0,0
-150,Tomato Club,54 Kau Yuk Road 教育路54號 Hong Kong,Restaurants,0,0
-152,Homura Ramen,"G/F, 83 Kau Yuk Road 教育路83號地鋪 Hong Kong",Ramen,0,0
-153,Ichiran,"Entrance Hall on G/F & Shop B, B/F, 8 Minden Avenue 棉登徑8號地庫B鋪及地下入口大堂 Hong Kong",Ramen,0,0
-154,一番日本料理,"C, G/F, San Kay House, 25-29 Kau Yuk Road 教育路25-29號新基樓G/F, C Hong Kong","Japanese,Sushi Bars",0,0
-155,Pear Orchard,"Yuen Long Theate, 9 Yuen Long Tai Yuk Road 元朗體育路9號元朗劇院大堂 Hong Kong",Hong Kong Style Cafe,0,0
-156,Chachawan,"G/F, 206 Hollywood Road 荷李活道206號地舖 Hong Kong",Thai,0,0
-157,Yat Lok Barbecue Restaurant,"G/F, Po Wah Building Block A, 5 Tai Ming Lane 大明里5號寶華樓A座地下 Hong Kong","Barbeque,Cantonese",0,0
-158,Mighty Vegetarian,"Shop 7, G/F, Fook Cheong Building, 35 Ma Wang Rd 媽橫路35號福昌樓地下7號舖 Hong Kong","Vegetarian,Hot Pot,Sandwiches",0,0
-159,Cafe Seoul,"Greenery Plaza Block B, Tai Po, New Territories",Korean,0,0
-160,Chan Kun Kee,"Wo Che Estate Market, 68 Siu Lek Yuen Rd, Sha Tin","Cantonese,Food Stands",0,0
-162,Shangri-La Curry House,"33 Yuen Long On Ning Road, Yuen Long",Indian,0,0
-163,Yat Lok Barbecue Restaurant,"Po Wah Building Block A, 5 Tai Ming Lane, New Territories","Barbeque,Cantonese",0,0
-164,Cheung Hing Kee Shanghai Pan-Fried Buns,"3-5 Fa Yuen Street, Yuen Long",Shanghainese,0,0
-165,海皇粥店,"Hing Fat House, 9-13 Kau Yuk Road, Yuen Long",Cantonese,0,0
-167,Tsui Wah Restaurant,"The Broadway, 54-62 Lockhart Road, Wan Chai",Hong Kong Style Cafe,0,0
-168,Mak’s Noodle,"77 Wellington Street, Central","Cantonese,Congee,Noodles",0,0
-169,Dim Sum Square,"G/F, Fu Fai Commercial Centre, 27 Hillier Street 禧利街27號富輝商業中心地下 Hong Kong",Dim Sum,0,0
-170,Cafe Seoul,"Shop 8, G/F, Greenery Plaza Block B, Tai Po 埔翠怡花園B座地下8號舖 Hong Kong",Korean,0,0
-171,Red Duke Banquet,"1/F, Manhattan Plaza Blk B, 23 Sai Ching Street 西菁街23號富達廣場B座1/F Hong Kong",Cantonese,0,0
-172,老地方菜館,"Wai Fat Building, 1A-5L Fung Cheung Road 元朗鳳翔路5號偉發大廈5號舖 Hong Kong",Chinese,0,0
-173,何明記,"1, G/F, Kwong Wah Centre, 34-46 Fau Tsoi Street 阜財街34-46號光華中心G/F, 1 Hong Kong",Cafes,0,0
-174,Mrs Tang Cafe,"Shop 1, King Palace Plaza, 55 King Yip Street 敬業街55號皇廷廣場1號舖 Hong Kong","Burgers,Fast Food",0,0
-176,海皇粥店,"Shop 7, G/F, Hing Fat House, 9-13 Kau Yuk Road 教育路9-13號興發大廈地下7號鋪 Hong Kong",Cantonese,0,0
-177,正記菜館,"Shop 4, G/F, Ho Sing Building, 28 Kam Fai Path 金輝徑28號好盛洋樓地下4號舖 Hong Kong","Cantonese,Hong Kong Style Cafe",0,0
-178,Hong Kong Old Restaurant,"4/F, Prat Mansions, 26-36 Prat Avenue 尖沙咀寶勒巷26號華寶大廈1樓 Hong Kong",Shanghainese,0,0
-179,Chongqing Style,"Shop 2, Wan Hing Building, 61-65 Yau Sang Street 又新街61-63號運興樓2號舖 Hong Kong",Szechuan,0,0
-180,Awakening 意粉專門店,"G/F, Yee Fung Garden Block B, 18 Ma Tin Road 馬田路18號怡豐花園A座地下 Hong Kong","Cafes,Italian",0,0
-181,Burger Joys,"Shop E, G/F, De Fenwick, 42-50 Lockhart Road 駱克道42-50號君悅居地下E鋪 Hong Kong","American (Traditional),Burgers,Fast Food",0,0
-182,過橋麵檔,"Tai Fook Centre, 9 Kin Tak Street 元朗建德街25號大福中心地下1號舖 Hong Kong",Chinese,0,0
-183,Cheung Hing Kee Shanghai Pan-Fried Buns,"Shop 10, G/F, 3-5 Fa Yuen Street 花園街3-5號地下10號舖 Hong Kong",Shanghainese,0,0
-184,Tsui Wah Restaurant,"G/F & B/F, 84-86 Des Voeux Road Central 德輔道中84-86號地下及地庫 Hong Kong",Hong Kong Style Cafe,0,0
-185,Otaru,63 Kin Yip Street 建業街63號 Hong Kong,"Grocery,Japanese",0,0
-186,Hong Lin Restaurant,"G/F, 143-145 Tung Choi Street 通菜街143-145號地下 Hong Kong",Hong Kong Style Cafe,0,0
-187,Sun Hang Yuen,"G/F, 38 Kweilin Street 桂林街38號地下 Hong Kong",Hong Kong Style Cafe,0,0
-188,吉叮噹美食站,"G/F 4, Winland Building, 1A Shui Che Kwun Street 元朗水車館街1A號連勝大廈4號地舖 Hong Kong",Hong Kong Style Cafe,0,0
-189,Izumisake Japanese Restaurant,"G/F, Yuen Tat Building, 81 Kau Yuk Road 教育路81號元達樓地下 Hong Kong","Japanese,Sushi Bars",0,0
-190,Mak’s Noodle,"G/F, 77 Wellington Street 威靈頓街77號地下 Hong Kong","Cantonese,Congee,Noodles",0,0
-191,緣聚,元朗西菁街好順泰大廈地下35號舖 Hong Kong,Japanese,0,0
-192,四眼仔腸粉,"G/F, 40B Wo Lung Street 和隆街40B號地下 Hong Kong","Delis,Hong Kong Style Cafe",0,0
-193,Yardbird,"G/F, 154-158 Wing Lok Street 永樂街154-158號地下 Hong Kong",Japanese,0,0
-194,Sun Ming Fat Restaurant,"G/F, 7 Kwong Fuk Lane 大埔墟廣福里7號地下 Hong Kong","Hong Kong Style Cafe,Dim Sum",0,0
-195,Ippudo,"Shop 210, Silvercord Tower, 30 Canton Road 廣東道30號新港中心2樓210號舖 Hong Kong",Ramen,0,0
-196,Cheese Noodles,1 Tin Wu Rd 天湖路1號 Hong Kong,Hong Kong Style Cafe,0,0
-197,Bookaccino,"Shop L126&L127, 1/F, Phase 1, Chung Fu Plaza, 30-33 Tin Wah Road 天華路30號頌富商場1樓L126&L127鋪 Hong Kong","Cafes,Desserts",0,0
-198,Beef & Liberty,"2/F, 23 Wing Fung Street 永豐街23號2樓 Hong Kong",Burgers,0,0
-199,過橋麵檔,"Tai Fook Centre, 9 Kin Tak Street 元朗建德街25號大福中心地下1號舖 Hong Kong",Chinese,0,0
-200,Homura Ramen,"G/F, 83 Kau Yuk Road 教育路83號地鋪 Hong Kong",Ramen,0,0
-201,Victory Beef Ball,"Shop 1, G/F, Kit Man House, Kuk Ting Street 谷亭街傑文樓地下1號舖 Hong Kong","Cantonese,Delicatessen",0,0
-202,Ichiran,"Entrance Hall on G/F & Shop B, B/F, 8 Minden Avenue 棉登徑8號地庫B鋪及地下入口大堂 Hong Kong",Ramen,0,0
-203,Little Sheep,"1/F, Chuk Bun Building, 10 Sai Ching Street 西菁街10號足彬大廈1樓 Hong Kong","Hot Pot,Dim Sum,Mongolian",0,0
-204,滾得棧,"G/F, 84 Sham Tseng Tsuen Road 深井村路G/F Hong Kong",Hot Pot,0,0
-205,偉記小廚,"47 & 51 (Minor Portion), G/F, Ho Shun Tai Building Blk B, 10 Sai Ching Street 西菁街10號好順泰大廈B座G/F, 47 & 51 (Minor Portion) Hong Kong",Cafes,0,0
-206,緣聚,元朗西菁街好順泰大廈地下35號舖 Hong Kong,Japanese,0,0
-207,Yuan is Here,"G/F, 73 Third Street 第三街73號地下 Hong Kong",Taiwanese,0,0
-208,Lai Sun Restaurant,"2, G/F, Man Shing Building, 132 Kau Yuk Road 教育路132號文丞樓G/F, 2 Hong Kong","Cafes,Diners",0,0
+﻿id,business_name,address,categories,average_rate,review_count,phone,price_range
+8,Mrs Tang Cafe,"Hang Tau Tsuen, Ping Shan 屏山坑頭村 Hong Kong",Hong Kong Style Cafe,0,0,2617 2232,1
+9,發記腸粉粥品,67 Kin Yip Street 建業街67號 Hong Kong,"Cantonese,Congee,Delis",0,0,2474 2201,1
+10,Tokyo Tsukiji,"Shop 102, 1/F, Phase 2, Fortune Kingswood, 12-18 Tin Yan Road 天恩路12-18號置富嘉湖二期1樓102號舖 Hong Kong",Ramen,0,0,2267 9208,0
+12,Hakka Hut,"1/F, Kingswood Ginza, 12 Tin Yan Road 天恩路12號嘉湖銀座1/F Hong Kong",Hakka,0,0,2180 7887,2
+13,Kurosawa Kitchen,Shek Wu Tong Tsuen 石湖塘村 Hong Kong,"Japanese,Caterers",0,0,,0
+14,Hung Fook Tong,"L2-5, 2/F, MTR Lok Ma Chau Station 港鐵落馬洲站2/F, L2-5 Hong Kong",Cantonese,0,0,3404 6558,0
+15,New York Cafe & Bar,"Shop 33-34, G/F, Transport Plaza, 2-6 Fung Cheung Road 鳳翔路2-6號交通廣場地下33-34號舖 Hong Kong",American (Traditional),0,0,2478 9638,2
+16,Siu Tao Yuen,28 Lau Fau Shan Main Street 流浮山正大街28號 Hong Kong,Cantonese,0,0,2472 1153,0
+18,Happy Seafood Restaurant,12 Shan Tung Street 山東街12號 Hong Kong,"Seafood,Cantonese,Dim Sum",0,0,2472 3450,3
+19,紅屋仔 芳記,"6 Palm Springs Boulevard, Mai Po 米埔加州大道6號 Hong Kong",Cantonese,0,0,9786 3911,2
+20,Cafe de Coral,"Shop G01, G/F, Phase 2, Fortune Kingswood, 12-18 Tin Yan Road 天恩路12-18號置富嘉湖二期地下G01號舖 Hong Kong","Fast Food,Hong Kong Style Cafe",0,0,2617 7203,0
+21,Urban United Burger & Bar,"Shop 8-9, G/F, Full Yau Court, 37-51 Yau San Street 又新街37-51號富祐閣地下8-9號舖 Hong Kong","American (Traditional),Burgers,Bars",0,0,3708 8493,2
+22,「老地方」肉餅專門店,Ping Shan 屏山蝦尾村 Hong Kong,Hong Kong Style Cafe,0,0,,0
+23,Hai Nam Chicken Takeaway Shop,"Shop A150, G/F, Kingswood Richly Plaza, 1 Tin Wu Road 天湖路1號新北江商場地下A150號舖 Hong Kong",Thai,0,0,6936 2963,1
+24,寿司の神,"Shop 7, G/F, On Ning Building, 20-30B Ma Tin Road 馬田路20-30B號安寧大廈地下7號鋪 Hong Kong","Sushi Bars,Japanese",0,0,2178 3163,0
+25,旺泰泰國菜,"Shop 19B, Hing Fook Building, Fuk Lok Path 褔樂徑幸福樓19B號鋪 Hong Kong",Thai,0,0,2476 9743,2
+26,Omerice,119 Kau Yuk Road 元朗教育路119號 Hong Kong,"Japanese,Asian Fusion",0,0,2711 1271,2
+27,迎囍宴會廳,"3/F, Long Ping Commercial Complex, 1 Long Ping Road 朗屏路1號朗屏商場3樓 Hong Kong","Desserts,Hong Kong Style Cafe",0,0,,0
+28,迎囍宴會廳,"3/F, Long Ping Commercial Complex, 1 Long Ping Road 朗屏路1號朗屏商場3樓 Hong Kong","Desserts,Hong Kong Style Cafe",0,0,,0
+30,Ho To Tai Noodle Shop,"G/F, 67 Fau Tsoi Street 阜財街67號地下 Hong Kong",Noodles,0,0,2476 2495,1
+31,潮豐潮州牛肉店,"C, G/F, Kam On Building, 2 Kam Fai Path 金輝徑2號金安閣G/F, C Hong Kong",Food Stands,0,0,2443 3088,0
+32,Homey Cafe,"Shop 15-16, Manhattan Plaza, 23 Sai Ching Street 西菁街23號富達廣場15-16號舖 Hong Kong",American (Traditional),0,0,2443 3248,0
+33,King Ludwig Beerhall,Castle Peak Road (Hung Shui Kiu) 元朗青山公路洪水橋段 Hong Kong,German,0,0,2477 5000,0
+34,New Shun Hing Chiushan Salty Food Shop,"Shop 9, G/F, 7-25 Yau San Street 又新街7-25號地下9號舖 Hong Kong","Barbeque,Teochew",0,0,2476 9348,2
+35,McDonald’s,"Shop G5-G7, G/F, Grandeur Terrace Shopping Centre, 88 Tin Shui Road 天瑞路88號俊宏軒地下G5-G7號舖 Hong Kong","Fast Food,Burgers",0,0,2811 5481,0
+36,Crazy Eats,"Stall Nos 20 & 21, G/F Blk A, Town CTR, Fariview Park 錦繡花園地下A座市中心20-21號 Hong Kong","Dim Sum,Hong Kong Style Cafe,Waffles",0,0,3144 3367,0
+37,119 Korea Station,"G/F, Full Shing Building, 9 Sai Ching Street 西菁街9號富盛大廈地下 Hong Kong",Korean,0,0,3565 6911,2
+38,Kam Wah Cafe,"G/F, 47 Bute Street 弼街47號地下 Hong Kong","Hong Kong Style Cafe,Bakeries",0,0,2392 6830,1
+39,Moon Kee Wanton Noodle,"G/F, 113A On Ning Road 安寧路113A號地下 Hong Kong","Cantonese,Congee,Noodles",0,0,2476 1368,0
+40,Riviera Restaurant,"Shop 66, G/F, Yee Fung Garden, 38 Ma Tin Road 馬田路38號怡豐花園地下66號鋪 Hong Kong","Breakfast & Brunch,Italian",0,0,2473 9786,0
+42,Anna Restaurant,"G/F, Lee Fat House, 5 Yan Lok Square 仁樂坊5號利發大樓地下 Hong Kong",Steakhouses,0,0,2479 5885,2
+43,樂園茶餐廳,錦田公路103號 Hong Kong,Hong Kong Style Cafe,0,0,,0
+44,Chui Hang Hin Seafood Hot Pot,"1/F, 9 Fung Yau Street South 鳳攸南街9號好順利大廈一樓 Hong Kong","Hot Pot,Seafood",0,0,2323 9818,0
+45,Plentiful Delight Banquet,"1/F, Ho Shun Tai Building, 10 Sai Ching Street 西菁街10號好順泰大廈1樓 Hong Kong","Cantonese,Dim Sum",0,0,,2
+46,Eggplant Thai Viet Cuisine,"Shop 10, G/F, Ho Shun King Building Blk 2, 3 Fung Yau Street South 鳳攸南街3號好順景大廈2座地下10號舖 Hong Kong","Thai,Vietnamese",0,0,2442 3399,2
+48,韓之美食,"Shop No. 7, G/F, On Fai Building, 30-40B Yuen Long On Hing Street 元朗安興街30-40號B安輝樓地下7號舖 Hong Kong",Korean,0,0,9042 6269,1
+49,京滬村,"Shop 2, 1/F, Block 1, Ho Shun Lee Building, 9 Fung Yau Street South 鳳攸南街9號好順利大廈1座1樓2號舖 Hong Kong",Pekinese,0,0,3956 8381,0
+50,Modern Shanghai,"Shop 1058, F/1, 9 Yuen Lung Street 元龍街9號1樓1058號舖 Hong Kong",Shanghainese,0,0,2602 2218,0
+51,天奴豬扒餐廳,"G/F, Yuen Tung Building, 18 Cheong Shing Path 昌盛徑18號元通樓地下 Hong Kong",Diners,0,0,2442 2997,0
+52,MJ Burger,"Shop C, G/F, 88 Kin Yip Street 建業街88號地下C舖 Hong Kong",Burgers,0,0,2462 2660,2
+53,真膳美,"G/F, Shop A104, Kingswood Richly Plaza, 1 Tin Wu Road 天湖路1號嘉湖新北江商場地下A104號舖 Hong Kong",Diners,0,0,2886 4394,0
+54,Ka Lai Yuen Chiu Chow Restaurant,"G/F, Li King House, 5 Hong King Street 康景街利景樓5號地下 Hong Kong","Congee,Teochew",0,0,2476 6882,2
+56,Ho Lee Fook,"G/F, 1-5 Elgin Street 伊利近街1-5號地下 Hong Kong","Asian Fusion,Cantonese",0,0,2810 0860,3
+57,Din Tai Fung,"Shop 306, 3/F, Silvercord, 30 Canton Road 廣東道30號新港中心3樓306舖 Hong Kong","Taiwanese,Shanghainese,Dim Sum",0,0,2730 6928,2
+58,Washington Fast Food Shop,"Block A garden Shop 9 underground Yuen Long, 7 Ma Wang Road 媽橫路7號富來花園A座元朗 地下9號鋪 Hong Kong","Fast Food,Burgers,Fish & Chips",0,0,2477 7700,0
+59,Achacha Cafe & Bistro,"Shop K&L, G/F, Shun Fat Building, 54-56 Kau Yuk Road 教育路54-56號順發大樓地下K&L號舖 Hong Kong","Breakfast & Brunch,Burgers,British",0,0,2479 4233,2
+60,Kau Kee Restaurant,"G/F, 21 Gough Street 歌賦街21號地下 Hong Kong","Cantonese,Noodles",0,0,2850 5967,1
+61,Cheung Hing Kee Shanghai Pan-fried Buns,"Shop 6A, G/F, 48 Lock Road 樂道48號地下6A號舖 Hong Kong",Shanghainese,0,0,2915 0389,1
+63,金輝士多,174 Kam Sheung Road 錦上路石湖塘村174號 Hong Kong,"Sandwiches,Convenience Stores",0,0,,1
+64,One Dim Sum,"Shop 1-2, G/F, Kenwood Mansion, 15 Playing Field Road 運動場道15號京華大廈地下1-2號鋪 Hong Kong","Cantonese,Dim Sum",0,0,2789 2280,1
+65,Ichiran,"Shop F - G, G/F, Lockhart House Block A, 440-446 Jaffe Road 謝斐道440-446號駱克大樓A座地下F-G 舖 Hong Kong",Ramen,0,0,2116 4802,2
+66,Tim Ho Wan,"G/F, 9-11 Fuk Wing Street 福榮街9-11號地下 Hong Kong","Cantonese,Dim Sum",0,0,2788 1226,1
+67,Mak Man Kee Noodle Shop,"G/F, Royal Commercial Centre, 51 Parkes Street 白加士街51號凱豪商業中心地下 Hong Kong","Congee,Cantonese,Noodles",0,0,2736 5561,1
+68,Din Tai Fung,"Shop 3-11, G/F, 68 Yee Wo Street 怡和街68號地下3-11舖 Hong Kong","Shanghainese,Taiwanese,Dim Sum",0,0,3160 8998,2
+69,老地方,Ping Shan Heritage Trail 屏山文物徑坑尾村 Hong Kong,Diners,0,0,,1
+70,將太日本料理,Kin Yip Street 元朗建業街27號地下 Hong Kong,Japanese,0,0,2443 3887,0
+71,學記麵家,"Shop 1, G/F, Cooked Food Centre, Kik Yeung Road 擊壤路熟食市場地下1號鋪 Hong Kong",Hong Kong Style Cafe,0,0,2442 8903,0
+72,聯發燒鵝,"Shop 4, G/F, Foo Choi House, 47 Fau Tsoi Street 阜財街47號富財樓地下4號舖 Hong Kong","Barbeque,Cantonese",0,0,2478 4995,0
+74,NZ 餐館,"G/F, G/F, 110 Ko Po Tsuen, Kam Tin, Yuen Long 元朗錦田高埔村110號地下G/F Hong Kong",Restaurants,0,0,2722 7778,2
+75,Country Cafe,"G/F, Fairview Park Country Club 錦綉花園鄉村俱樂部地下 Hong Kong",Diners,0,0,2471 6333,0
+76,Sushi Man,"Shop E, Lee Fat House, 5 Yan Lok Square 仁樂坊5號利發大樓E號鋪 Hong Kong","Japanese,Sushi Bars",0,0,2285 9477,3
+77,Greens Farm,"60 Sze Pai Shek, Kam Sheung Road 錦上路四排石村60號 Hong Kong","Farms,Barbeque,Hong Kong Style Cafe",0,0,5339 8333,0
+79,McDonald’s,"Shop 003, 005, 006 & 063, G/F, Yuen Long Plaza 元朗廣場地下003, 005, 006及063號舖 Hong Kong","Fast Food,Burgers",0,0,,0
+80,東方勝記飯店,4 On Shun Street 安信街4號 Hong Kong,Dim Sum,0,0,,0
+81,Fairview Park Country Club,Lotus Road 紅荷路 Hong Kong,"Dim Sum,Asian Fusion,Sports Clubs",0,0,2471 6333,0
+82,Fairview Restaurant,"1/F, Fairview Park Country Club, Lotus Road 紅荷路錦綉花園鄉村俱樂部1樓 Hong Kong","Cantonese,Dim Sum",0,0,2471 6333,0
+83,Butao Ramen,"G/F, Chun Wah Commercial Building, 28-30 Minden Avenue 棉登徑28-30號振華商業大廈地下A,B舖 Hong Kong",Ramen,0,0,2316 2878,2
+84,Le Café des Délices,"Shop 12, Block 1, G/F, 9 Fung Yau Street South 鳳攸南街9號好順利大廈1座地下12號 Hong Kong","Creperies,French,Cafes",0,0,6999 3953,0
+85,Chi Kee Congee,11 On Tat Square 安達坊11號 Hong Kong,Congee,0,0,,1
+86,Bo Lai House,"Shop 15, 88 Kau Yuk Road 教育路88號15號舖 Hong Kong",Hong Kong Style Cafe,0,0,2479 3968,1
+87,Sawadee Thai Restaurant,"G/F-1/F, 1 Yuen Long Tung Shing Lei Road 元朗東成里路1號G/F-1/F Hong Kong",Thai,0,0,3147 0338,0
+88,Joy Hing Roasted Meat,"C Block, G/F, 265 Hennessy Rd 軒尼詩道265-267號地下C座 Hong Kong","Cantonese,Barbeque",0,0,2519 6639,1
+90,Australia Dairy Company,"G/F, 47-49 Parkes Street 白加士街47-49號地下 Hong Kong","Hong Kong Style Cafe,Desserts,Coffee & Tea",0,0,2730 1356,1
+91,為食街,"G/F, San Kay House, 25-29 Kau Yuk Road 教育路新基樓地下 Hong Kong",Hong Kong Style Cafe,0,0,,1
+92,Oriental Kingdom Restaurant,"1/F, Kai Hei Land Building, 385 Castle Peak Road - Castle Peak Bay 青山公路青山灣段385號嘉喜利大廈1/F Hong Kong",Cantonese,0,0,2613 1282,0
+93,AloyMakMak,3-21 Castle Peak Road Yuen Long 青山公路元朗段3-21號 Hong Kong,"Thai,Vietnamese",0,0,,0
+94,Samborg Canteen,"C43A, 1/F, Kingswood Richly Plaza, 1 Tin Wu Road 天湖路1號嘉湖新北江商場1/F, C43A Hong Kong",Diners,0,0,2446 6884,1
+95,麗江雲南米線,"1/F, Kingswood Richly Plaza 天湖路1號新北江商場1樓, C45A Hong Kong","Chinese,Delicatessen",0,0,2447 0999,0
+96,Mixian Sense,"Shop G02 & G04, G/F, Fortune Kingswood Phase 2, 12-18 Tin Yan Road 天恩路12-18號置富嘉湖二期地下G02及G04號舖 Hong Kong",Szechuan,0,0,2141 0196,0
+97,119 Korea Station,"Shop 95-100, G/F, Full Shing Building, 9 Sai Ching Street 西菁街9號富盛大廈地下95-100號舖 Hong Kong",Korean,0,0,3565 6911,0
+98,Mr. Big,"Shop 56, G/F, Yee Fung Garden, 38 Ma Tin Road 馬田路38號怡豐花園地下56號舖 Hong Kong",Pizza,0,0,2802 0233,0
+99,Lo Dim,"Shop B, G/F, 23 Hong King Street 康景街23號華恩樓地下B舖 Hong Kong",Dim Sum,0,0,2327 0999,0
+100,Miss Chu,"G/F, 1B Lok Fu Building, Ma Miu Road, Shui Pin Wai, Yuen Long 媽廟路水邊圍邨山水樂富大廈1B 地下 Hong Kong",Hong Kong Style Cafe,0,0,2478 9922,0
+101,Hei Yue Heen,"Fairview Park, Lakeside Path 環湖徑錦綉花園 Hong Kong","Dim Sum,Cantonese",0,0,2668 0562,2
+104,Aya,"Shop 14, G/F, Yick Lee Mansion, 26 Kin Tak Street 建德街26號益利大廈地下14號舖 Hong Kong",Ramen,0,0,3686 0130,2
+105,Cafe De Coral,"Shop A, G/F, Block B, Town Centre, Fairview Park 錦繡花園市中心B座地下A號舖 Hong Kong","Fast Food,Hong Kong Style Cafe",0,0,2471 1209,0
+106,強記大排檔,"2/F, Shek Wu Hui Municipal Services Building, 13 Chi Cheong Road 智昌路13號石湖墟市政大廈2樓 Hong Kong",Hong Kong Style Cafe,0,0,2671 3083,2
+107,屏山盆菜,"G/F, G/F, Dd 121, Lot 2C, 36 Tong Fong Tsuen, Ping Ha Road, Ping Shan, Yuen Long 元朗屏山屏廈路丈量約份第121約地段第2號C段 塘坊村36號地下G/F Hong Kong",Restaurants,0,0,,0
+108,Tung Po,"2/F, Java Road Municipal Services Building, 99 Java Road 渣華道99號渣華道市政大廈2樓 Hong Kong","Cantonese,Seafood,Food Stands",0,0,2880 5224,2
+109,快車茶餐廳,"G/F, 53 Peng Chau Wing On Street 永安街53號地下 Hong Kong",Hong Kong Style Cafe,0,0,2983 8756,0
+112,Chow Chow Cafe,"Shop 24, G/F, Ho Shun King Building, 3 Fung Yau Street South 鳳攸南街3號好順景大廈地下24號舖 Hong Kong",Cafes,0,0,2327 2345,0
+113,Sea View Food Shop,"G/F, 105 Argyle Street 亞皆老街105號地下 Hong Kong","Congee,Hong Kong Style Cafe",0,0,2787 7330,1
+114,Golden Castle Restaurant,"DD114 , Sheung Tsuen , Shek Kong , Pad Heung, Yuen Long 元朗八鄉石崗上村DD114號 Hong Kong","Wine Bars,Seafood,International",0,0,2488 1642,0
+116,大盛屋日本料理,"Shop 58-59, G/F, Ho Shun Lee Building Block 2, 9 Fung Yau Street South 鳳攸南街9號好順利大廈2座商場地下58-59號鋪 Hong Kong","Japanese,Sushi Bars",0,0,2351 0123,0
+117,Yue Kee Restaurant,"G/F, 9 Sham Hong Road 深康路9號地下 Hong Kong","Barbeque,Cantonese",0,0,2491 0105,3
+118,Tsim Chai Kee Noodle,"G/F, 98 Wellington Street 威靈頓街98號地下 Hong Kong",Noodles,0,0,2850 6471,1
+119,Kam’s Roast Goose,"G/F, Po Wah Commercial Centre, 226 Hennessy Road 軒尼詩道226號寶華商業中心地下 Hong Kong","Barbeque,Cantonese",0,0,2520 1110,2
+120,Fu Tung Chinese Market,"Fu Tung Plaza, Tat Tung Road 達東路富東廣場 Hong Kong","Live/Raw Food,Farmers Market",0,0,,1
+121,Crystal Lotus,"Hong Kong Disneyland Hotel, Magic Road 神奇道香港迪士尼樂園酒店 Hong Kong",Cantonese,0,0,3510 6000,3
+122,Peony Golden Court,"Shop 4-5, G/F, Ho Shun Tai Building, 10 Sai Ching Street 西菁街10號好順泰大廈地下4-5號 Hong Kong","Dim Sum,Cantonese",0,0,2476 1389,0
+124,蛇王如蛇店,60 Fairview Park Boulevard 錦繡花園大道60號 Hong Kong,Chinese,0,0,2479 0738,1
+125,貴雲樓（米線專家）,"G/F, Shop 5, 18 Cheung Shing Path 昌盛徑18號地下5號舖 Hong Kong",Chinese,0,0,3462 3329,0
+127,Pharos Restaurant,"Shop 8, G/F, Ho King Building, 10-28 Hop Yick Road 合益路10-28號好景洋楼8號地下 Hong Kong",International,0,0,3480 3369,2
+128,Bai Wei Siang BBQ Specialty Shop,"G/F, 260 Castle Peak Road (Yuen Long) 青山公路元朗260號地下 Hong Kong",Hong Kong Style Cafe,0,0,,1
+129,Wing Wah Noodle Shop,"1/F, Warner Building, 89-91 Hennessy Road 軒尼詩道89-91號華寧大廈1樓 Hong Kong","Cantonese,Congee,Noodles",0,0,2527 7476,1
+130,King’s Party,"G/F, 26-28 Ha San Wai Road 下新圍路26-28號地下 Hong Kong",Thai,0,0,2471 6886,0
+131,生記巴蜀軒山西刀削麵,"46, G/F, Fortune Centre, 17-31 Fung Cheung Road 鳳翔路17-31號鴻運中心G/F, 46 Hong Kong",Szechuan,0,0,2479 8035,1
+132,天鴻燒鵝,94 Kin Yip Street 建業街94號 Hong Kong,Barbeque,0,0,,2
+133,Sun Hing Restaurant,"Shop C, G/F, 8 Smithfield Road 士美菲路8號地下C號舖 Hong Kong",Dim Sum,0,0,2816 0616,1
+134,JP Cafe,49-63 Castle Peak Road 青山公路49-63號 Hong Kong,Cafes,0,0,2567 0238,0
+135,Mighty Vegetarian,"Shop 7, G/F, Fook Cheong Building, 35 Ma Wang Rd 媽橫路35號福昌樓地下7號舖 Hong Kong","Vegetarian,Hot Pot,Sandwiches",0,0,2475 8928,1
+138,V Cuisine,"26, MTR Yuen Long Station 港鐵元朗站26 Hong Kong",Cantonese,0,0,2443 2677,0
+139,Tao Heung Training Restaurant,"G/F, Tao Miao Institute, 13 Au Pui Wan Street 坳背灣街13號稻苗學院G/F Hong Kong","Cantonese,Dim Sum",0,0,8300 8007,2
+141,Tasty Congee & Noodle Wantun Shop,"Shop 3016-3018, 3/F, IFC mall, 1 Harbour View Street 港景街1號國際金融中心商場一期3樓3016-3018號舖 Hong Kong","Cantonese,Congee,Dim Sum",0,0,2295 0101,2
+142,Kam Fung Restaurant,"G/F Spring Garden Mansion, 41 Spring Garden Lane 春園街41號春園大廈地下 Hong Kong","Hong Kong Style Cafe,Cafes,Fast Food",0,0,2572 0526,1
+143,Little Bao,"G/F, 66 Staunton Street 士丹頓街66號地下 Hong Kong","Burgers,International",0,0,2194 0202,2
+145,Hao De Lai Xiao Long Bao Dian,"G/F, 18 Tak Hing Street 德興街18號地下 Hong Kong","Shanghainese,Dim Sum",0,0,2377 9488,2
+146,Sister Wah,13 Electric Rd 電氣道13號 Hong Kong,"Chinese,Noodles",0,0,2807 0181,1
+147,Bing Shan Country,"Shop D2, Kingswood Richly Plaza, No.1 Tin Wu Road 天湖路1號嘉湖新北江商場1樓原宿地帶D2號舖 Hong Kong","Hong Kong Style Cafe,Ice Cream & Frozen Yogurt",0,0,,1
+148,Cafe Seoul,"Shop 8, G/F, Greenery Plaza Block B, Tai Po 埔翠怡花園B座地下8號舖 Hong Kong",Korean,0,0,3488 8414,0
+149,Tomato Club,54 Kau Yuk Road 教育路54號 Hong Kong,Restaurants,0,0,2337 7798,0
+150,PizzaExpress,"Shop 1076, 1/F, YOHO Mall, 9 Yuen Lung Street 元龍街9號形點一期1樓1076號舖 Hong Kong",Pizza,0,0,5808 8811,0
+151,Awakening 意粉專門店,"G/F, Yee Fung Garden Block B, 18 Ma Tin Road 馬田路18號怡豐花園A座地下 Hong Kong","Cafes,Italian",0,0,2443 4520,0
+153,一番日本料理,"C, G/F, San Kay House, 25-29 Kau Yuk Road 教育路25-29號新基樓G/F, C Hong Kong","Japanese,Sushi Bars",0,0,3521 0387,2
+154,大肚腩腸粉,"Shop 14, Ho Sing Building, 28 Kam Fai Path 金輝徑28號好盛洋樓14號舖 Hong Kong",Food Stands,0,0,9683 0463,1
+155,Pear Orchard,"Yuen Long Theate, 9 Yuen Long Tai Yuk Road 元朗體育路9號元朗劇院大堂 Hong Kong",Hong Kong Style Cafe,0,0,3523 1166,1
+156,Shing Kee Noodles,"Shop 5, Lek Yuen Estate Market, Sha Tin 沙田瀝源熟食中心5號舖 Hong Kong","Congee,Hot Pot",0,0,2692 6611,1
+157,Mint Thai House,"12 & 13, G/F, Yee Hong Building, 2 On Chun Lane 安駿里2號怡康大廈G/F, 12 & 13 Hong Kong",Thai,0,0,2475 5872,2
+158,一番日本料理,"C, G/F, San Kay House, 25-29 Kau Yuk Road 教育路25-29號新基樓G/F, C Hong Kong","Japanese,Sushi Bars",0,0,3521 0387,2
+159,crystal cafe,"Fortune Centre, 15 Fung Kam Street 鳳琴街15號鴻運中心 Hong Kong",Steakhouses,0,0,2723 3019,0
+160,Tomato Club,54 Kau Yuk Road 教育路54號 Hong Kong,Restaurants,0,0,2337 7798,0
+162,Tsui Wah Restaurant,"G/F & B/F, 84-86 Des Voeux Road Central 德輔道中84-86號地下及地庫 Hong Kong",Hong Kong Style Cafe,0,0,2815 3000,2
+163,Mak’s Noodle,"G/F, 77 Wellington Street 威靈頓街77號地下 Hong Kong","Cantonese,Congee,Noodles",0,0,2854 3810,1
+164,Bing Shan Country,"Shop D2, Kingswood Richly Plaza, No.1 Tin Wu Road 天湖路1號嘉湖新北江商場1樓原宿地帶D2號舖 Hong Kong","Hong Kong Style Cafe,Ice Cream & Frozen Yogurt",0,0,,1
+166,Foo Lum Palace,"G/F, 22 Fung Kam Street 鳳琴街22號地下 Hong Kong",Cantonese,0,0,2470 9923,0
+167,PizzaExpress,"Shop 1076, 1/F, YOHO Mall, 9 Yuen Lung Street 元龍街9號形點一期1樓1076號舖 Hong Kong",Pizza,0,0,5808 8811,0
+168,老地方菜館,"Wai Fat Building, 1A-5L Fung Cheung Road 元朗鳳翔路5號偉發大廈5號舖 Hong Kong",Chinese,0,0,,2
+169,Chongqing Style,"Shop 2, Wan Hing Building, 61-65 Yau Sang Street 又新街61-63號運興樓2號舖 Hong Kong",Szechuan,0,0,2479 1298,1
+170,Dim Sum Square,"G/F, Fu Fai Commercial Centre, 27 Hillier Street 禧利街27號富輝商業中心地下 Hong Kong",Dim Sum,0,0,2851 8088,1
+171,海皇粥店,"Shop 7, G/F, Hing Fat House, 9-13 Kau Yuk Road 教育路9-13號興發大廈地下7號鋪 Hong Kong",Cantonese,0,0,2477 8050,0
+172,Yat Lok Barbecue Restaurant,"G/F, Po Wah Building Block A, 5 Tai Ming Lane 大明里5號寶華樓A座地下 Hong Kong","Barbeque,Cantonese",0,0,2656 4732,2
+173,Outback Steakhouse,"2016, 2/F, tmtplaza 屯門市廣場2/F, 2016 Hong Kong","Steakhouses,Australian",0,0,2426 3918,0
+174,何明記,"1, G/F, Kwong Wah Centre, 34-46 Fau Tsoi Street 阜財街34-46號光華中心G/F, 1 Hong Kong",Cafes,0,0,,0
+175,Hong Kong Old Restaurant,"4/F, Prat Mansions, 26-36 Prat Avenue 尖沙咀寶勒巷26號華寶大廈1樓 Hong Kong",Shanghainese,0,0,2722 1812,1
+176,正記菜館,"Shop 4, G/F, Ho Sing Building, 28 Kam Fai Path 金輝徑28號好盛洋樓地下4號舖 Hong Kong","Cantonese,Hong Kong Style Cafe",0,0,2443 3319,1
+177,Otaru,63 Kin Yip Street 建業街63號 Hong Kong,"Grocery,Japanese",0,0,2443 9816,2
+178,四眼仔腸粉,"G/F, 40B Wo Lung Street 和隆街40B號地下 Hong Kong","Delis,Hong Kong Style Cafe",0,0,,1
+179,Otaru,63 Kin Yip Street 建業街63號 Hong Kong,"Grocery,Japanese",0,0,2443 9816,2
+180,Tsui Wah Restaurant,"2/F, The Broadway, 54-62 Lockhart Road 駱克道54-62號博匯大廈2樓 Hong Kong",Hong Kong Style Cafe,0,0,2542 2288,2
+181,Foo Lum Palace,"G/F, 22 Fung Kam Street 鳳琴街22號地下 Hong Kong",Cantonese,0,0,2470 9923,0
+182,海皇粥店,"Shop 7, G/F, Hing Fat House, 9-13 Kau Yuk Road 教育路9-13號興發大廈地下7號鋪 Hong Kong",Cantonese,0,0,2477 8050,0
+183,Chachawan,"G/F, 206 Hollywood Road 荷李活道206號地舖 Hong Kong",Thai,0,0,2549 0020,2
+185,Yue,"Hong Kong Gold Coast Hotel, 1 Castle Peak Road - Castle Peak Bay 青山公路青山灣段1號黃金海岸酒店 Hong Kong",Cantonese,0,0,2452 8668,2
+187,吉叮噹美食站,"G/F 4, Winland Building, 1A Shui Che Kwun Street 元朗水車館街1A號連勝大廈4號地舖 Hong Kong",Hong Kong Style Cafe,0,0,,1
+188,緣聚,元朗西菁街好順泰大廈地下35號舖 Hong Kong,Japanese,0,0,,2
+189,Chachawan,"G/F, 206 Hollywood Road 荷李活道206號地舖 Hong Kong",Thai,0,0,2549 0020,2
+190,Izumisake Japanese Restaurant,"G/F, Yuen Tat Building, 81 Kau Yuk Road 教育路81號元達樓地下 Hong Kong","Japanese,Sushi Bars",0,0,2479 8618,0
+191,海皇粥店,"Shop 7, G/F, Hing Fat House, 9-13 Kau Yuk Road 教育路9-13號興發大廈地下7號鋪 Hong Kong",Cantonese,0,0,2477 8050,0
+192,Mott 32,"Standard Chartered Bank Building, 4-4A Des Voeux Road Central 德輔道中4-4A號渣打銀行大廈地庫 Hong Kong","Dim Sum,Pekinese,Cantonese",0,0,2885 8688,3
+193,Mint Thai House,"12 & 13, G/F, Yee Hong Building, 2 On Chun Lane 安駿里2號怡康大廈G/F, 12 & 13 Hong Kong",Thai,0,0,2475 5872,2
+194,Chee Kei,"G/F, 52 Lock Road 樂道52號地下 Hong Kong","Cantonese,Noodles",0,0,2368 2528,2
+195,Shangri-La Curry House,33 Yuen Long On Ning Road 安寧路144號地下 Hong Kong,Indian,0,0,2944 5566,2
+196,Yue,"Hong Kong Gold Coast Hotel, 1 Castle Peak Road - Castle Peak Bay 青山公路青山灣段1號黃金海岸酒店 Hong Kong",Cantonese,0,0,2452 8668,2
+197,Crystal Jade La Mian Xiao Long Bao,"Shop 2018, 2/F, One IFC Mall, Central 中環國際金融中心1期2樓2018號舖 Hong Kong","Shanghainese,Dim Sum",0,0,2295 3811,2
+198,Cafe Malacca,"2/F, Hotel Jen Hong Kong, 508 Queen's Road West 皇后大道西508號香港盛貿飯店2樓 Hong Kong","Singaporean,Malaysian,Diners",0,0,2213 6613,2
+199,Mak’s Noodle,"G/F, 77 Wellington Street 威靈頓街77號地下 Hong Kong","Cantonese,Congee,Noodles",0,0,2854 3810,1
+200,柒拾后,"Shop M2, Tse King House Stage 2, 138 Yuen Long Ning Road, Yuen Long 元朗安寧路138號紫荊樓二期M2舖 Hong Kong","Delis,Hong Kong Style Cafe",0,0,9251 4204,0
+201,田中日本料理,"G/F, G/F, 18 Castle Peak Road, Yuen Long 元朗青山公路元朗段18號地下G/F Hong Kong",Japanese,0,0,2474 7874,0
+204,Miss Coffee,"Shop 18, G/F, Look Yuen, 6 Tsing Pak Path 青柏徑6號鹿苑地下18號舖 Hong Kong",Cafes,0,0,5408 0055,0
+205,Hung’s Delicacies,"(Non-Restricted Area) Level 3, Hong Kong International Airport Passenger Terminal 2, 1 Sky Plaza Road 翔天路1號香港國際機場二號客運大樓第3層（非禁區） Hong Kong",Teochew,0,0,3197 9331,2
+206,Lily & Bloom,"5 /F & 6/F, LKF Tower, 33 Wyndham Street 雲咸街33號蘭桂坊酒店5樓及6樓 Hong Kong","Bars,Diners,American (Traditional)",0,0,2810 6166,2
+207,厚興瑜記手撕雞,"G/F, 60 Sau Fu Street 壽富街60號地下 Hong Kong","Cantonese,Food Stands",0,0,9607 7974,0
