@@ -102,7 +102,7 @@ class GatheringViewSet(viewsets.ModelViewSet):
     #permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
     def get_queryset(self):
         requestUser=self.request.user
-        for gathering in Gathering.objects.all():
+        for gathering in Gathering.objects.filter(is_start=False):
 
             returnRate=lambda myProfile,otherProfile: 1 if myProfile.cluster==otherProfile.cluster else -1
 
@@ -123,7 +123,7 @@ class GatheringViewSet(viewsets.ModelViewSet):
         mkey=list(rr.values_list('gathering_id',flat=True))
         clauses = ' '.join(['WHEN id=%s THEN %s' % (pk, i) for i, pk in enumerate(mkey)])
         ordering = 'CASE %s END' % clauses
-        queryset = Gathering.objects.filter(pk__in=mkey).extra(
+        queryset = Gathering.objects.filter(pk__in=mkey,is_start=False).extra(
                    select={'ordering': ordering}, order_by=('ordering',))
         return queryset
 
@@ -154,7 +154,25 @@ class UserGatheringList(generics.ListAPIView):
 
     def get_queryset(self):
         id = self.kwargs['userid']
-        return Gathering.objects.filter(Q(member__id=id ) | Q(user__id=id))#user__id=id,
+        return Gathering.objects.filter(Q(member__id=id ) | Q(user__id=id)).filter(is_start=True)
+
+class UserCreatedGatheringList(generics.ListAPIView):
+    model = Gathering
+    queryset = Gathering.objects.all()
+    serializer_class = GatheringSerializer
+
+    def get_queryset(self):
+        id = self.kwargs['userid']
+        return Gathering.objects.filter(user__id=id)
+
+class UserJoinedGatheringList(generics.ListAPIView):
+    model = Gathering
+    queryset = Gathering.objects.all()
+    serializer_class = GatheringSerializer
+
+    def get_queryset(self):
+        id = self.kwargs['userid']
+        return Gathering.objects.filter(member__id=id)
 
 class ParticipateViewSet(viewsets.ModelViewSet):
     queryset = Participate.objects.all()
