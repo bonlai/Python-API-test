@@ -127,7 +127,7 @@ class GatheringViewSet(viewsets.ModelViewSet):
 
     @list_route()
     def location(self, request):
-        gathering = Gathering.objects.all()
+        gathering = Gathering.objects.filter(is_start=False)
         serializer = GatheringLocationSerializer(gathering, many=True)
         return Response(serializer.data)
 
