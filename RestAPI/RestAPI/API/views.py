@@ -26,6 +26,8 @@ from rest_framework.filters import OrderingFilter
 from rest_framework import mixins
 from rest_framework import status
 from django.db.models import Count
+from django.shortcuts import get_object_or_404
+from django.db.models import Case, When
 
 class ListUser(generics.ListAPIView):
     queryset = User.objects.all()
@@ -60,21 +62,7 @@ class ProfileViewSet(viewsets.ModelViewSet):
 class RestaurantImageViewSet(viewsets.ModelViewSet):
     queryset = RestaurantImage.objects.all()
     serializer_class = RestaurantImageSerializer
-'''
-class AppUserViewSet(viewsets.ModelViewSet):
-    queryset = AppUser.objects.all()
-    serializer_class = AppUserSerializer
-    #permission_classes = (IsAuthenticated,)
 
-    @list_route(methods=['get'])
-    def testing(self,request):
-        serializer_context = {
-            'request': request,
-        }
-        appUser = AppUser.objects.get(pk=2)
-        serializer = AppUserSerializer(appUser,context=serializer_context)
-        return Response(serializer.data)
-'''
 class LargeResultsSetPagination(PageNumberPagination):
     page_size = 10
     def get_paginated_response(self, data):
@@ -92,7 +80,7 @@ class GatheringFilter(filters.FilterSet):
         fields = ['location','start_date']
 
 class GatheringViewSet(viewsets.ModelViewSet):
-    #queryset = Gathering.objects.annotate(member_count=Count('member')).all()
+    queryset = Gathering.objects.annotate(member_count=Count('member')).all()
     serializer_class = GatheringSerializer
     pagination_class = LargeResultsSetPagination
     filter_backends = (filters.DjangoFilterBackend,SearchFilter,OrderingFilter)
@@ -100,9 +88,10 @@ class GatheringViewSet(viewsets.ModelViewSet):
     filter_class = GatheringFilter
     search_fields = ('name','details')
     #permission_classes = (permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly,)
+
     def get_queryset(self):
         requestUser=self.request.user
-        for gathering in Gathering.objects.filter(is_start=False):
+        for gathering in Gathering.objects.all():
 
             returnRate=lambda myProfile,otherProfile: 1 if myProfile.cluster==otherProfile.cluster else -1
 
@@ -121,32 +110,27 @@ class GatheringViewSet(viewsets.ModelViewSet):
 
         rr=requestUser.recommendedrate_set.all().order_by('-restaurant_rate', '-cluster_rate','distance_rate')
         mkey=list(rr.values_list('gathering_id',flat=True))
-        clauses = ' '.join(['WHEN id=%s THEN %s' % (pk, i) for i, pk in enumerate(mkey)])
-        ordering = 'CASE %s END' % clauses
-        queryset = Gathering.objects.filter(pk__in=mkey,is_start=False).extra(
-                   select={'ordering': ordering}, order_by=('ordering',))
+        preserved = Case(*[When(pk=pk, then=pos) for pos, pk in enumerate(mkey)])
+        queryset = Gathering.objects.filter(pk__in=mkey,is_start=False).annotate(member_count=Count('member')).order_by(preserved)
+        #queryset=queryset.annotate(member_count=Count('member')).all()
         return queryset
 
     def perform_create(self, serializer):
         # Include the owner attribute directly, rather than from request data.
         instance = serializer.save(user=self.request.user)
 
+    def retrieve(self, request, pk=None):
+        queryset = Gathering.objects.all()
+        gathering = get_object_or_404(queryset, pk=pk)
+        serializer = GatheringSerializer(gathering)
+        return Response(serializer.data)
+
     @list_route()
     def location(self, request):
         gathering = Gathering.objects.all()
         serializer = GatheringLocationSerializer(gathering, many=True)
         return Response(serializer.data)
-'''
-    @detail_route(methods=['get'])
-    def participant(self, request, pk=None):
-        members=self.get_object.
-        gathering = self.get_object()
-        serializer = ProfileSerializer(user=request.data.user)
-        #if serializer.is_valid():
-         #   return Response({'status': 'password set'})
-        #else:
-        return Response({'status': 'password set'})
-'''
+
 class UserGatheringList(generics.ListAPIView):
     model = Gathering
     queryset = Gathering.objects.all()
@@ -163,7 +147,7 @@ class UserCreatedGatheringList(generics.ListAPIView):
 
     def get_queryset(self):
         id = self.kwargs['userid']
-        return Gathering.objects.filter(user__id=id)
+        return Gathering.objects.filter(user__id=id,is_start=False)
 
 class UserJoinedGatheringList(generics.ListAPIView):
     model = Gathering
@@ -172,7 +156,7 @@ class UserJoinedGatheringList(generics.ListAPIView):
 
     def get_queryset(self):
         id = self.kwargs['userid']
-        return Gathering.objects.filter(member__id=id)
+        return Gathering.objects.filter(member__id=id,is_start=False)
 
 class ParticipateViewSet(viewsets.ModelViewSet):
     queryset = Participate.objects.all()
