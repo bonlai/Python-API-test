@@ -12,8 +12,6 @@ class SlopeOne(object):
     def init_rating_matrix(self):
         self.userIdList=list(User.objects.all().order_by('id').values_list('id', flat=True))
         self.restaurantIdList=list(Restaurant.objects.all().values_list('id', flat=True))
-        #self.test="hi"
-        #print(self.test)
         self.ratingMatrix = pd.DataFrame(index=self.userIdList,columns=self.restaurantIdList)
         allReviews=Review.objects.all()
         for review in allReviews:

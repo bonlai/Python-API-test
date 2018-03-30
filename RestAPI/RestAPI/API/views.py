@@ -91,7 +91,7 @@ class GatheringViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         requestUser=self.request.user
-        for gathering in Gathering.objects.all():
+        for gathering in Gathering.objects.filter(is_start=False):
 
             returnRate=lambda myProfile,otherProfile: 1 if myProfile.cluster==otherProfile.cluster else -1
 

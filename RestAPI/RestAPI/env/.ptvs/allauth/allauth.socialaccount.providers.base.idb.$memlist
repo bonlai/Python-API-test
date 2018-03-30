@@ -1,4 +1,3 @@
-python_2_unicode_compatible
 AuthAction
 app_settings
 ProviderException

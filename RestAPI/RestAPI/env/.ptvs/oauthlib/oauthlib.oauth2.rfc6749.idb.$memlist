@@ -3,7 +3,7 @@ unicode_literals
 request_validator
 TemporarilyUnavailableError
 tokens
-clients
+grant_types
 absolute_import
 OAuth2Error
 logging
@@ -16,4 +16,4 @@ BaseEndpoint
 functools
 ServerError
 catch_errors_and_unavailability
-grant_types
+clients

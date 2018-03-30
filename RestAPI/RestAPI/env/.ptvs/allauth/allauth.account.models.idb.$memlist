@@ -15,5 +15,4 @@ _
 transaction
 EmailConfirmationHMAC
 EmailConfirmation
-python_2_unicode_compatible
 get_random_string

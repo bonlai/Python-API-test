@@ -20,6 +20,5 @@ get_current_site
 get_next_redirect_url
 Site
 SocialAccount
-python_2_unicode_compatible
 SocialAppManager
 get_request_param

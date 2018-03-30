@@ -6,7 +6,7 @@ forms
 app_settings
 views
 default_app_config
-management
+migrations
 auth_backends
 utils
 tests
@@ -15,4 +15,4 @@ urls
 templatetags
 managers
 admin
-migrations
+management

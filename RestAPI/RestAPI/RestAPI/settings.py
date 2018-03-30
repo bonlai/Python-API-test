@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'django_filters',
     'background_task',
     'django_extensions',
+    'rest_framework_swagger',
 ]
 
 #restrict number of items in one json

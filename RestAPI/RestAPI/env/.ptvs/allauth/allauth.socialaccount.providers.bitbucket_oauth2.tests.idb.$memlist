@@ -5,6 +5,5 @@ BitbucketOAuth2Provider
 unicode_literals
 BitbucketOAuth2Tests
 SocialAccount
-override_settings
 mock
 MockedResponse

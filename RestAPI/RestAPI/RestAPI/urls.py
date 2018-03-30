@@ -15,11 +15,12 @@ import django.contrib.auth.views
 from django.contrib import admin
 from rest_framework.routers import DefaultRouter
 from rest_framework.authtoken import views
+from rest_framework_swagger.views import get_swagger_view
 # Uncomment the next lines to enable the admin:
 # from django.conf.urls import include
 # from django.contrib import admin
 # admin.autodiscover()
-
+schema_view = get_swagger_view(title='Pastebin API')
 router = DefaultRouter()
 router.register(r'gathering', GatheringViewSet,'gathering')
 router.register(r'restaurantImage', RestaurantImageViewSet)
@@ -50,7 +51,8 @@ urlpatterns = [
     #user registration and login url
     url(r'^api/rest-auth/', include('rest_auth.urls')),
     url(r'^api/rest-auth/registration/', include('rest_auth.registration.urls')),
-    url(r'^api/rest-auth/facebook/$', FacebookLogin.as_view(), name='fb_login')
+    url(r'^api/rest-auth/facebook/$', FacebookLogin.as_view(), name='fb_login'),
+    url(r'^api_docs/$', schema_view)
 ]
 
 #for media access (e.g. images)

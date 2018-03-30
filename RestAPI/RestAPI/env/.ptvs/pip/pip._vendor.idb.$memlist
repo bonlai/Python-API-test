@@ -7,9 +7,9 @@ pkg_resources
 os
 ipaddress
 six
-sys
-pyparsing
 distlib
+pyparsing
+WHEEL_DIR
 absolute_import
 distro
 html5lib
@@ -20,5 +20,5 @@ cachecontrol
 lockfile
 ordereddict
 packaging
-WHEEL_DIR
+sys
 vendored

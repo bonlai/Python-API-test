@@ -35,8 +35,8 @@ views
 throttling
 pagination
 authtoken
-schemas
 templatetags
+schemas
 generics
 fields
 __version__

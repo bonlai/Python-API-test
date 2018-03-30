@@ -6,7 +6,6 @@ reverse
 is_anonymous
 django
 urlparse
-NoReverseMatch
 six
 parse_qsl
 is_authenticated
