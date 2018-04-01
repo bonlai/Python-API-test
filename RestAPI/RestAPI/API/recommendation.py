@@ -59,7 +59,7 @@ class SlopeOne(object):
 
 class UserClustering(object):
     def __init__(self):
-        self.profileList=list(Profile.objects.all().order_by('user_id').values_list('user_id', flat=True))
+        self.profileList=list(Profile.objects.exclude(dob__isnull=True).exclude(location="").order_by('user_id').values_list('user_id', flat=True))
         self.distanceMatrixLenght=len(self.profileList)
         
         qs = Profile.objects.all()
