@@ -1,6 +1,5 @@
 from background_task import background
 from API.recommendation import *
-import googlemaps
 
 @background(schedule=1)
 def autoClustering():
@@ -9,20 +8,8 @@ def autoClustering():
 
 @background(schedule=1)
 def calDistanceRate():
-    gmaps = googlemaps.Client(key='AIzaSyBUcE5kC4G6NL0hb8VjqFOAsZLGaQoWO7Q')  
-    for requestUser in User.objects.all():
-        if (requestUser.profile.latitude!=None):
-            for gathering in Gathering.objects.filter(is_start=False):
-                origins = (requestUser.profile.latitude, requestUser.profile.longitude)
-                distance = gmaps.distance_matrix(origins,gathering.restaurant.address)
-                result=distance.get('rows')[0].get('elements')[0].get('duration')
-                if (result!=None):
-                    distance_rate=result.get('value')
-                    #print(requestUser.id,gathering.id,distance_rate)
-                    obj, created = RecommendedRate.objects.update_or_create(
-                        gathering=gathering, user=requestUser,
-                        defaults={'distance_rate': distance_rate}
-                    )
+    c=Context()
+    c.calDistanceRate()
 
 @background(schedule=1)
 def slopeOneCal():

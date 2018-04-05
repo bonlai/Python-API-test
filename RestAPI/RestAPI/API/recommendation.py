@@ -3,6 +3,7 @@ from sklearn.cluster import AgglomerativeClustering
 import pandas as pd
 import numpy as np
 from django_pandas.io import read_frame
+import googlemaps
 
 class SlopeOne(object):
     def __init__(self):
@@ -156,3 +157,22 @@ class UserClustering(object):
         clusterLabelList=clustering.fit_predict(totalDifferenceMatrix)
         for i in range(0,self.distanceMatrixLenght): 
             Profile.objects.filter(user_id=self.profileList[i]).update(cluster=clusterLabelList[i])
+
+class Context(object):
+    def __init__(self):
+        self.gmaps = googlemaps.Client(key='AIzaSyBUcE5kC4G6NL0hb8VjqFOAsZLGaQoWO7Q')  
+
+    def calDistanceRate(self):
+        for requestUser in User.objects.all():
+            if (requestUser.profile.latitude!=None):
+                for gathering in Gathering.objects.filter(is_start=False):
+                    origins = (requestUser.profile.latitude, requestUser.profile.longitude)
+                    distance = self.gmaps.distance_matrix(origins,gathering.restaurant.address)
+                    result=distance.get('rows')[0].get('elements')[0].get('duration')
+                    if (result!=None):
+                        distance_rate=result.get('value')
+                        print(requestUser.id,gathering.id,distance_rate)
+                        obj, created = RecommendedRate.objects.update_or_create(
+                            gathering=gathering, user=requestUser,
+                            defaults={'distance_rate': distance_rate}
+                        )
