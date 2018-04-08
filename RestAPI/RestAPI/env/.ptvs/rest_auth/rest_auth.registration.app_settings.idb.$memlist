@@ -1,7 +1,0 @@
-register_permission_classes
-RegisterSerializer
-DefaultRegisterSerializer
-AllowAny
-serializers
-import_callable
-settings

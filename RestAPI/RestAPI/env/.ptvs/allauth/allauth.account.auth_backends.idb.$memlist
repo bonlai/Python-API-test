@@ -1,7 +1,0 @@
-get_user_model
-AuthenticationMethod
-app_settings
-filter_users_by_username
-AuthenticationBackend
-ModelBackend
-filter_users_by_email

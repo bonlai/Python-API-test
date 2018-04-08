@@ -1,9 +1,0 @@
-views
-models
-app_settings
-admin
-serializers
-social_serializers
-registration
-urls
-utils

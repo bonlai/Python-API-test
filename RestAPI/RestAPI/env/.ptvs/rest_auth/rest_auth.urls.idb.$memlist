@@ -1,8 +1,0 @@
-PasswordResetConfirmView
-PasswordResetView
-urlpatterns
-url
-UserDetailsView
-PasswordChangeView
-LogoutView
-LoginView
