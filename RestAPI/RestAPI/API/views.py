@@ -138,7 +138,7 @@ class UserGatheringList(generics.ListAPIView):
 
     def get_queryset(self):
         id = self.kwargs['userid']
-        return Gathering.objects.filter(Q(member__id=id ) | Q(user__id=id)).filter(is_start=True)
+        return Gathering.objects.filter(Q(member__id=id ) | Q(user__id=id)).filter(is_start=True).order_by('-start_datetime')
 
 class UserCreatedGatheringList(generics.ListAPIView):
     model = Gathering
@@ -147,7 +147,7 @@ class UserCreatedGatheringList(generics.ListAPIView):
 
     def get_queryset(self):
         id = self.kwargs['userid']
-        return Gathering.objects.filter(user__id=id,is_start=False)
+        return Gathering.objects.filter(user__id=id,is_start=False).order_by('-start_datetime')
 
 class UserJoinedGatheringList(generics.ListAPIView):
     model = Gathering
@@ -156,7 +156,7 @@ class UserJoinedGatheringList(generics.ListAPIView):
 
     def get_queryset(self):
         id = self.kwargs['userid']
-        return Gathering.objects.filter(member__id=id,is_start=False)
+        return Gathering.objects.filter(member__id=id,is_start=False).order_by('-start_datetime')
 
 class ParticipateViewSet(viewsets.ModelViewSet):
     queryset = Participate.objects.all()
