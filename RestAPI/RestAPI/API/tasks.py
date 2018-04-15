@@ -26,5 +26,5 @@ def slopeOneCal():
             )
 
 calDistanceRate(repeat=60)
-autoClustering(repeat=43200)
+autoClustering(repeat=60)
 slopeOneCal(repeat=60)
